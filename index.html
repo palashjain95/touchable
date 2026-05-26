@@ -35,9 +35,9 @@
       content="Touch-first React design system. Components, tokens, haptics, and docs."
     />
 
-    <!-- Icons & theme -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="site.webmanifest" />
+    <!-- Icons & theme (root-absolute so Vite base applies; relative breaks on nested routes) -->
+    <link rel="icon" href="/touchable/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/touchable/site.webmanifest" />
     <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0d0d0c" media="(prefers-color-scheme: dark)" />
     <meta name="application-name" content="Touchable" />
