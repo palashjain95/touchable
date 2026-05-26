@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import {
   BookOpenIcon,
   HeartIcon,
-  HandRaisedIcon,
+  SignalIcon,
   Squares2X2Icon,
   SwatchIcon,
 } from "@heroicons/react/24/outline";
@@ -15,7 +15,7 @@ const NAV = [
   { to: "/docs/principles", label: "Principles", end: false, icon: HeartIcon },
   { to: "/", label: "Components", end: true, icon: Squares2X2Icon },
   { to: "/docs/tokens", label: "Tokens", end: false, icon: SwatchIcon },
-  { to: "/docs/haptics", label: "Haptics", end: false, icon: HandRaisedIcon },
+  { to: "/docs/haptics", label: "Haptics", end: false, icon: SignalIcon },
   { to: "/docs/how-to-use", label: "How to use", end: false, icon: BookOpenIcon },
 ] as const;
 
@@ -110,7 +110,7 @@ export function DocsShell({ children }: { children: ReactNode }) {
               key={to}
               to={to}
               end={end}
-              className={({ isActive }) => cn(navItemClass(isActive), "w-auto px-3")}
+              className={({ isActive }) => cn(navItemClass(isActive), "w-auto gap-2 px-3")}
             >
               <Icon className="size-4 shrink-0" aria-hidden />
               {label}

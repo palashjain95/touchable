@@ -53,8 +53,8 @@ export function ComponentsPage() {
           <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--fg-primary)]">
             Touchable
           </h1>
-          <div className="flex items-center gap-3">
-            <p className="text-xs font-medium text-[var(--fg-tertiary)]">Primary colour</p>
+          <div className="flex flex-col items-end gap-1">
+            <p className="text-xs font-medium text-[var(--fg-tertiary)]">Pick your brand colour</p>
             <PrimaryColorPicker />
           </div>
         </div>
