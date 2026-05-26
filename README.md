@@ -2,7 +2,6 @@
 
 [![CI](https://github.com/palashjain95/touchable/actions/workflows/ci.yml/badge.svg)](https://github.com/palashjain95/touchable/actions/workflows/ci.yml)
 [![Demo](https://img.shields.io/badge/Demo-live-111?style=flat)](https://palashjain95.github.io/touchable/)
-[![Author](https://img.shields.io/badge/Website-jpalash.com-111?style=flat)](https://www.jpalash.com/)
 
 **Beautiful UI that reads.**
 
@@ -53,3 +52,7 @@ npm install @palashjain/touchable
 ## License
 
 MIT
+
+## Author
+
+[![Author](https://img.shields.io/badge/Website-jpalash.com-111?style=flat)](https://www.jpalash.com/)
