@@ -13,8 +13,8 @@
   ],
   "files": [
     "dist",
-    "DESIGN.md",
-    "INTEGRATION.md",
+    "docs/DESIGN.md",
+    "docs/INTEGRATION.md",
     "docs/ios-haptics.md",
     "docs/touchable-consumer.mdc"
   ],

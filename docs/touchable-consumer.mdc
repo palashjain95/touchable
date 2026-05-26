@@ -44,6 +44,6 @@ Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles f
 
 ## Reference
 
-Read `node_modules/@palashjain/touchable/DESIGN.md` for tokens, variants, and accessibility.
-Read `node_modules/@palashjain/touchable/INTEGRATION.md` for full setup.
+Read `node_modules/@palashjain/touchable/docs/DESIGN.md` for tokens, variants, and accessibility.
+Read `node_modules/@palashjain/touchable/docs/INTEGRATION.md` for full setup.
 Read `node_modules/@palashjain/touchable/docs/ios-haptics.md` for haptic mapping and rules.

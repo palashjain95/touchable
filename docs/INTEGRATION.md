@@ -70,8 +70,8 @@ import {
 
 From `node_modules` (or your local link):
 
-- `node_modules/@palashjain/touchable/DESIGN.md`: principles, tokens, variants
-- `node_modules/@palashjain/touchable/INTEGRATION.md`: this guide
+- `node_modules/@palashjain/touchable/docs/DESIGN.md`: principles, tokens, variants
+- `node_modules/@palashjain/touchable/docs/INTEGRATION.md`: this guide
 
 ---
 
@@ -83,7 +83,7 @@ Follow the standard install above.
 
 ### Step 2: Copy the consumer rule
 
-Copy [`docs/touchable-consumer.mdc`](./docs/touchable-consumer.mdc) from this repo into your project:
+Copy [`touchable-consumer.mdc`](./touchable-consumer.mdc) from this package into your project:
 
 ```
 your-app/.cursor/rules/touchable.mdc
@@ -97,7 +97,7 @@ The rule sets `alwaysApply: true` so Cursor uses Touchable for all product UI.
 ## UI
 
 Use `@palashjain/touchable` for all product UI.
-Read `node_modules/@palashjain/touchable/DESIGN.md` (or `../touchable/DESIGN.md` if using file:).
+Read `node_modules/@palashjain/touchable/docs/DESIGN.md` (or `../touchable/docs/DESIGN.md` if using file:).
 Do not use raw shadcn Button for product screens: use Touchable Button variants.
 ```
 
@@ -107,7 +107,7 @@ When asking Cursor to build a screen:
 
 ```
 Build this screen using @palashjain/touchable components only.
-Follow DESIGN.md: 44px tap targets, accessibility (labels, aria-label on icon-only controls).
+Follow docs/DESIGN.md: 44px tap targets, accessibility (labels, aria-label on icon-only controls).
 Import styles.css in main.tsx.
 One primary Button per screen. Forms: InputField + label, Combobox variant field for selects.
 ```
@@ -141,12 +141,12 @@ This project uses Touchable (@palashjain/touchable) for UI.
 Components: Button, ButtonNeutral, Card, InputField, SearchField, Dropdown/Combobox, Pill, Tabs, Icon.
 Principles: touch-first (h-11 buttons), crisp 1px rims, clear hierarchy, accessible labels on icon-only controls.
 Always import from @palashjain/touchable: do not generate custom button/card/input styles.
-Follow DESIGN.md for tokens, variants, and accessibility.
+Follow docs/DESIGN.md for tokens, variants, and accessibility.
 ```
 
-### Step 4: Attach DESIGN.md
+### Step 4: Attach docs/DESIGN.md
 
-For v0.1, paste or attach `DESIGN.md` when adding new UI until Lovable can resolve npm package docs.
+For v0.1, paste or attach `docs/DESIGN.md` when adding new UI until Lovable can resolve npm package docs.
 
 ### Step 5: Tailwind scan
 
@@ -160,8 +160,8 @@ If styles look unstyled, remind Lovable to add `@source` for Touchable class nam
 
 Upload or attach to your Claude Project:
 
-- `DESIGN.md`: principles, tokens, variants
-- `INTEGRATION.md`: this guide
+- `docs/DESIGN.md`: principles, tokens, variants
+- `docs/INTEGRATION.md`: this guide
 - Demo screenshots or link to deployed demo (post-launch)
 
 ### Step 2: Custom instructions
@@ -179,14 +179,14 @@ Do not invent alternate button/card/input styling.
 ### Step 3: Per-task prompt
 
 ```
-Implement [feature] using @palashjain/touchable. Reference DESIGN.md for variants and accessibility.
+Implement [feature] using @palashjain/touchable. Reference docs/DESIGN.md for variants and accessibility.
 Use InputField with <label htmlFor>, Combobox variant field for selects, ButtonNeutral for secondary actions.
 Interactive Card rows need onClick, aria-label, and keyboard activation (built-in when onClick is set).
 ```
 
 ### Step 4: Claude Code / terminal
 
-Same as Cursor: copy `docs/touchable-consumer.mdc` into your consumer `.cursor/rules/`, or paste `DESIGN.md` into context.
+Same as Cursor: copy `docs/touchable-consumer.mdc` into your consumer `.cursor/rules/`, or paste `docs/DESIGN.md` into context.
 
 ---
 
@@ -229,7 +229,7 @@ hapticNotification("success"); // after mutation succeeds
 hapticNotification("error");   // on failure
 ```
 
-Full reference: `docs/ios-haptics.md` and the demo **Haptics** page.
+Full reference: [ios-haptics.md](./ios-haptics.md) and the demo **Haptics** page.
 
 ---
 

@@ -45,7 +45,7 @@ Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles f
 
 ## Reference
 
-Read \`node_modules/@palashjain/touchable/DESIGN.md\` for tokens, variants, and accessibility.
+Read \`node_modules/@palashjain/touchable/docs/DESIGN.md\` for tokens, variants, and accessibility.
 Read \`node_modules/@palashjain/touchable/docs/ios-haptics.md\` for haptic mapping and rules.`;
 
 const INSTALL_SNIPPET = `npm install @palashjain/touchable
@@ -67,7 +67,7 @@ const TAILWIND_SNIPPET = `@import "tailwindcss";
 @source "../node_modules/@palashjain/touchable/dist/**/*.js";`;
 
 const CURSOR_SCREEN_PROMPT = `Build this screen using @palashjain/touchable components only.
-Follow DESIGN.md: 44px tap targets, accessibility (labels, aria-label on icon-only controls).
+Follow docs/DESIGN.md: 44px tap targets, accessibility (labels, aria-label on icon-only controls).
 Import styles.css in main.tsx.
 One primary Button per screen. Forms: InputField + label, Combobox variant field for selects.
 iOS haptics are automatic on native builds; use configureHaptics({ enabled: false }) to disable globally.`;
@@ -77,7 +77,7 @@ Components: Button, ButtonNeutral, Card, InputField, SearchField, Combobox/Dropd
 Principles: touch-first (h-11 buttons), crisp 1px rims, clear hierarchy, accessible control names.
 iOS haptics are built into pressable components; disable with configureHaptics({ enabled: false }).
 Always import from @palashjain/touchable: do not generate custom button/card/input styles.
-Follow DESIGN.md for tokens, variants, and accessibility.`;
+Follow docs/DESIGN.md for tokens, variants, and accessibility.`;
 
 const CLAUDE_KNOWLEDGE_RULE = `UI stack: React + Tailwind v4 + @palashjain/touchable.
 Use Touchable components for all product UI. Import styles.css at app entry.
@@ -86,14 +86,14 @@ Main action = Button. Surfaces = Card. Forms = InputField + Combobox. Filters = 
 iOS haptics are built in on native iOS/Capacitor; configureHaptics({ enabled: false }) disables globally.
 Do not invent alternate button/card/input styling.`;
 
-const CLAUDE_TASK_PROMPT = `Implement [feature] using @palashjain/touchable. Reference DESIGN.md for variants and accessibility.
+const CLAUDE_TASK_PROMPT = `Implement [feature] using @palashjain/touchable. Reference docs/DESIGN.md for variants and accessibility.
 Use InputField with <label htmlFor>, Combobox for selects, ButtonNeutral for secondary actions.
 Interactive Card rows: onClick, aria-label, keyboard (built-in when onClick is set).`;
 
 const AGENTS_SNIPPET = `## UI
 
 Use \`@palashjain/touchable\` for all product UI.
-Read \`node_modules/@palashjain/touchable/DESIGN.md\` (or \`../touchable/DESIGN.md\` if using file:).
+Read \`node_modules/@palashjain/touchable/docs/DESIGN.md\` (or \`../touchable/docs/DESIGN.md\` if using file:).
 Do not use raw shadcn Button for product screens: use Touchable Button variants.`;
 
 function CopyActions({ children }: { children: ReactNode }) {
@@ -138,7 +138,7 @@ export function HowToUsePage() {
 
       <Section
         title="Claude"
-        description="Add DESIGN.md to Project Knowledge, then copy the knowledge rule and per-task prompt."
+        description="Add docs/DESIGN.md to Project Knowledge, then copy the knowledge rule and per-task prompt."
       >
         <CopyActions>
           <CopyButton text={CLAUDE_KNOWLEDGE_RULE} label="Copy knowledge rule" />

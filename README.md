@@ -10,8 +10,6 @@ Touch-first React design system: crisp surfaces, strong hierarchy, and component
 
 | | |
 |---|---|
-| **Repository** | `touchable` |
-| **Description** | Touch-first React design system. Beautiful UI that reads. |
 | **Package** | `@palashjain/touchable` (in development) |
 
 ---
@@ -25,7 +23,7 @@ Touchable is a small component library built around that idea. Interfaces that f
 
 I want the same bar I see in beautifully crafted products, where the design language holds up in buttons, tabs, and cards, not just hero screens. Touchable is my attempt to make that reusable.
 
-**Design reference:** [DESIGN.md](./DESIGN.md).
+**Design reference:** [docs/DESIGN.md](./docs/DESIGN.md) · [docs/INTEGRATION.md](./docs/INTEGRATION.md).
 
 ---
 

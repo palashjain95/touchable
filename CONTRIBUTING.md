@@ -1,6 +1,6 @@
 # Contributing to Touchable
 
-Thanks for helping improve Touchable. This is a small, opinionated design library: changes should align with [DESIGN.md](./DESIGN.md) and [AGENTS.md](./AGENTS.md).
+Thanks for helping improve Touchable. This is a small, opinionated design library: changes should align with [docs/DESIGN.md](./docs/DESIGN.md) and [AGENTS.md](./AGENTS.md).
 
 ---
 
@@ -40,7 +40,7 @@ npm run ci
 3. Export from `src/index.ts`
 4. Add demo page in `demo/src/pages/`
 5. Add smoke test in `src/__tests__/`
-6. Update `DESIGN.md` variants table
+6. Update `docs/DESIGN.md` variants table
 7. Add entry to `CHANGELOG.md` under `[Unreleased]`
 
 ---
