@@ -1,5 +1,8 @@
 # Touchable
 
+[![Website](https://img.shields.io/badge/Website-jpalash.com-111?style=flat)](https://www.jpalash.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Palash_Jain-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palash-jain-2565b612a/)
+
 **Beautiful UI that reads.**
 
 Touch-first React design system: crisp surfaces, strong hierarchy, and components built for thumbs (not just cursors). Buttons, cards, forms, tabs, tokens, and a Vite demo gallery.
@@ -59,42 +62,12 @@ In 2025, Apple introduced **Liquid Glass**: a beautiful, material-rich visual la
 
 Touchable is my take on that balance: still beautiful, still modern: with **defined edges, strong hierarchy, and touch-first interaction** at the center.
 
-I'm not anti-Apple. I'm **pro-readability, pro-simplicity, pro-touch, and pro-beautiful design**.
-
-Different emphasis. Shared respect for craft.
-
 ---
 
 ## Install
 
 ```bash
 npm install @palashjain/touchable
-```
-
-Import styles in your app entry:
-
-```tsx
-import "@palashjain/touchable/styles.css";
-```
-
-Use components:
-
-```tsx
-import {
-  Button,
-  ButtonNeutral,
-  Card,
-  InputField,
-  Dropdown,
-  Combobox,
-  SearchField,
-  Pill,
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  Icon,
-} from "@palashjain/touchable";
 ```
 
 ### Requirements
@@ -106,79 +79,26 @@ import {
 
 ## Components (v0.1)
 
-### Actions & links
+**Demo** — [Components](https://palashjain95.github.io/touchable/) · [Principles](https://palashjain95.github.io/touchable/docs/principles) · [Tokens](https://palashjain95.github.io/touchable/docs/tokens) · [Haptics](https://palashjain95.github.io/touchable/docs/haptics) · [How to use](https://palashjain95.github.io/touchable/docs/how-to-use)
 
-| Component | Description |
-|-----------|-------------|
-| `Button` | Primary action: 44px default, press feedback |
-| `ButtonNeutral` | Secondary action: translucent shell, crisp rim |
-| `ButtonTertiary` | Ghost / low-emphasis action |
-| `ButtonOutline` | Primary border accent on neutral fill |
-| `ButtonDestructive` | Delete, stop, irreversible actions |
-| `ButtonAffirmative` | Confirm / positive secondary actions |
-| `ButtonInverse` | Inverse fill for dark surfaces |
-| `ButtonIcon` | Round icon button (`aria-label` required) |
-| `ButtonDisc` | Colour swatch / compact disc control |
-| `ButtonLink` | Text link (`--fg-link`) |
-| `ButtonIconLinkLabeled` | Icon link + text label |
+**Reference** — [DESIGN.md](./DESIGN.md)
 
-### Surfaces & navigation
+**Actions & links**  
+[Button](./DESIGN.md#button) — `ButtonNeutral`, `ButtonTertiary`, `ButtonOutline`, `ButtonDestructive`, `ButtonAffirmative`, `ButtonInverse`, `ButtonIcon`, `ButtonDisc`, `ButtonLink`, `ButtonIconLinkLabeled`
 
-| Component | Description |
-|-----------|-------------|
-| `Card` | Content surface: sizes, urgency, optional interactive press |
-| `Pill` | Tags, filters, status chips |
-| `Tabs` | Segmented control with sliding indicator |
-| `Icon` | Standardized icon sizing (xs → 2xl), decorative |
+**Surfaces & navigation**
+- [Card](./DESIGN.md#card)
+- [Pill](./DESIGN.md#pill)
+- [Tabs](./DESIGN.md#tabs)
+- [Icon](./DESIGN.md#icon-scale)
 
-### Forms & search
+**Forms & search**
+- [InputField](./DESIGN.md#inputfield)
+- [SearchField](./DESIGN.md#searchfield)
+- [Dropdown](./DESIGN.md#dropdown--combobox)
+- [Combobox](./DESIGN.md#dropdown--combobox)
 
-| Component | Description |
-|-----------|-------------|
-| `InputField` | Native text/date inputs (`compact` h-8, `default` h-11) |
-| `SearchField` | Search with icon (`pill` \| `field`) |
-| `Dropdown` | Fixed-option select (Radix, `role="combobox"` on trigger) |
-| `Combobox` | Alias for `Dropdown` (same API, clearer name in forms) |
-
-### Utilities
-
-| Export | Description |
-|--------|-------------|
-| `cn` | `clsx` + `tailwind-merge` |
-| `pressableDivProps` | Keyboard + `role="button"` for custom pressable rows |
-| `inputFieldClass` | Class string for styled native `<input>` |
-
-See [DESIGN.md](./DESIGN.md) for tokens, spacing, touch conventions, accessibility, and the FX model.
-
-**Demo gallery** (run `npm run dev:demo`): Components (`/`), Principles (`/docs/principles`), Tokens (`/docs/tokens`), Haptics (`/docs/haptics`), How to use (`/docs/how-to-use`). Each component section includes a **Copy prompt** action for AI tools.
-
-**Hosted demo** (GitHub Pages): [palashjain95.github.io/touchable](https://palashjain95.github.io/touchable/) — deploys from `main` via `.github/workflows/deploy-demo.yml`. For a custom domain or root-path host, set `BASE_PATH=/` when building (`demo/vite.config.ts`).
-
----
-
-## Quick example
-
-```tsx
-import "@palashjain/touchable/styles.css";
-import { Button, Card, Tabs, TabsList, TabsTrigger, TabsContent } from "@palashjain/touchable";
-
-export function Example() {
-  return (
-    <Card>
-      <Tabs defaultValue="a">
-        <TabsList>
-          <TabsTrigger value="a">Overview</TabsTrigger>
-          <TabsTrigger value="b">Details</TabsTrigger>
-        </TabsList>
-        <TabsContent value="a">
-          <p>Content with clear hierarchy.</p>
-          <Button>Primary action</Button>
-        </TabsContent>
-      </Tabs>
-    </Card>
-  );
-}
-```
+**Utilities** — `cn`, `pressableDivProps`, `inputFieldClass`
 
 ---
 
@@ -210,25 +130,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR checklist.
 
 ---
 
-## Contact
-
-**Palash Jain**, designer of Touchable
-
-- GitHub: [github.com/palashjain95](https://github.com/palashjain95)
-- LinkedIn: [linkedin.com/in/palash-jain-2565b612a](https://www.linkedin.com/in/palash-jain-2565b612a/)
-- Email: [palash95jain@gmail.com](mailto:palash95jain@gmail.com)
-
-Questions, feedback, or collaboration? Reach out anytime.
-
----
-
 ## License
 
-MIT © Palash Jain
-
----
-
-## Links
-
-- Repository: [github.com/palashjain95/touchable](https://github.com/palashjain95/touchable)
-- Package: `@palashjain/touchable` (npm, when published)
+MIT
