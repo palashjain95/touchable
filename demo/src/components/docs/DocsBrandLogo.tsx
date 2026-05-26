@@ -1,4 +1,5 @@
 import { cn } from "@palashjain/touchable";
+import { publicAsset } from "../../lib/publicAsset";
 
 export function DocsBrandLogo({
   className = "h-8 w-8",
@@ -10,12 +11,12 @@ export function DocsBrandLogo({
   return (
     <>
       <img
-        src="/brand-sign/sign_light.svg"
+        src={publicAsset("brand-sign/sign_light.svg")}
         alt={alt}
         className={cn("dark:hidden", className)}
       />
       <img
-        src="/brand-sign/sign_dark.svg"
+        src={publicAsset("brand-sign/sign_dark.svg")}
         alt={alt}
         className={cn("hidden dark:block", className)}
       />

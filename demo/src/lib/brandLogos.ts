@@ -1,3 +1,5 @@
+import { publicAsset } from "./publicAsset";
+
 /** Committed brand marks in `demo/public/brands/`. */
-export const LOVABLE_LOGO = "/brands/lovable.svg";
-export const APPLE_LOGO = "/brands/apple.svg";
+export const LOVABLE_LOGO = publicAsset("brands/lovable.svg");
+export const APPLE_LOGO = publicAsset("brands/apple.svg");
