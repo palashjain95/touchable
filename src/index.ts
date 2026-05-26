@@ -1,5 +1,24 @@
 export { cn } from "./lib/utils";
 export { pressableDivProps } from "./lib/a11y";
+export {
+  configureHaptics,
+  getHapticsConfig,
+  hapticLightImpact,
+  hapticMediumImpact,
+  hapticSelection,
+  hapticTabChange,
+  hapticNotification,
+  withHapticPress,
+  useUserGesture,
+} from "./lib/haptics";
+export type {
+  HapticPressKind,
+  HapticNotificationKind,
+  HapticsConfig,
+} from "./lib/haptics";
+
+export { HapticsProvider } from "./components/haptics-provider";
+export type { HapticsProviderProps } from "./components/haptics-provider";
 
 export {
   Button,

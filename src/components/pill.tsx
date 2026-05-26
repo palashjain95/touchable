@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { ReactNode } from 'react';
 
+import { withHapticPress, type HapticPressKind } from '../lib/haptics';
 import { cn } from '../lib/utils';
 
 const PILL_NEUTRAL_TOKEN_STYLE = {
@@ -166,6 +167,7 @@ export type PillVariant = 'neutral' | 'accent';
 type PillOptions = {
   variant?: PillVariant;
   interactive?: boolean;
+  haptic?: HapticPressKind;
 };
 
 export type PillProps = PillOptions &
@@ -183,16 +185,19 @@ export function pillClass({
 
 export function PillNeutral({
   interactive = false,
+  haptic,
   children,
   className,
   ...props
 }: PillProps) {
+  const shellProps = interactive ? withHapticPress({ ...props, haptic }, "selection") : props;
+
   return (
     <span
       data-pill=""
       className={cn(pillClass({ interactive }), className)}
       style={PILL_NEUTRAL_SHELL_STYLE}
-      {...props}
+      {...shellProps}
     >
       <PillFxLayers styles={PILL_NEUTRAL_FX} interactive={interactive} />
       <span className={PILL_BODY_CLASS}>{children}</span>
@@ -202,17 +207,20 @@ export function PillNeutral({
 
 export function PillAccent({
   interactive = false,
+  haptic,
   children,
   className,
   style,
   ...props
 }: PillProps) {
+  const shellProps = interactive ? withHapticPress({ ...props, haptic }, "selection") : props;
+
   return (
     <span
       data-pill=""
       className={cn(pillClass({ interactive }), className)}
       style={{ ...PILL_ACCENT_TOKEN_STYLE, ...style }}
-      {...props}
+      {...shellProps}
     >
       <PillFxLayers styles={PILL_ACCENT_FX} interactive={interactive} />
       <span className={PILL_BODY_CLASS}>{children}</span>

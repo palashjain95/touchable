@@ -49,6 +49,9 @@ Feedback confirms action. Ornament doesn't compete with content.
 - Fast transitions (**150ms**); instant on active
 - Content always sits above FX layers (`z-30`)
 
+### 7. Hardware-aware touch (iOS)
+Apple Haptics: feel the UI when you touch the screen. Built into Touchable components, not something you wire up per screen. Native iOS apps (including Capacitor) get haptics automatically. `configureHaptics({ enabled: false })` to turn off.
+
 ---
 
 ## Inspiration
@@ -217,7 +220,7 @@ Safe area: respect `env(safe-area-inset-*)` on mobile shells.
 
 Sizes: `default` (44px), `compact` (36px), `widget` (primary only).
 
-Label weight: **`font-normal` (400)** on all button variants—including primary, neutral, links, and disc labels. Use `font-semibold` for page headlines, not for button copy.
+Label weight: **`font-normal` (400)** on all button variants, including primary, neutral, links, and disc labels. Use `font-semibold` for page headlines, not for button copy.
 
 ### Card
 
@@ -250,7 +253,7 @@ Sizes:
 
 | Part | Notes |
 |------|-------|
-| `TabsList` | Full-width on mobile, inline on desktop |
+| `TabsList` | Full-width track; triggers share space equally (`flex-1`) |
 | `TabsTrigger` | 36px height, sliding indicator |
 | `TabsContent` | Focus ring on keyboard nav |
 

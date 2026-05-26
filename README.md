@@ -2,12 +2,12 @@
 
 **Beautiful UI that reads.**
 
-Touch-first React design system — crisp surfaces, strong hierarchy, and components built for thumbs (not just cursors). Buttons, cards, forms, tabs, tokens, and a Vite demo gallery.
+Touch-first React design system: crisp surfaces, strong hierarchy, and components built for thumbs (not just cursors). Buttons, cards, forms, tabs, tokens, and a Vite demo gallery.
 
 | | |
 |---|---|
 | **Repository** | `touchable` |
-| **Description** | Touch-first React design system — beautiful UI that reads |
+| **Description** | Touch-first React design system. Beautiful UI that reads. |
 | **Package** | `@palashjain/touchable` (in development) |
 
 ---
@@ -40,7 +40,7 @@ This library is my attempt to carry that same discipline into something reusable
 Visual polish and legibility should reinforce each other, not compete.
 
 ### Touch first
-44px default targets. Obvious press states. Built for thumbs, not just cursors.
+44px default targets. Obvious press states. Built for thumbs, not just cursors. Native iOS haptics built into components (see `docs/ios-haptics.md`).
 
 ### Crisp and simple
 1px rims. Defined surfaces. Few variants, strong defaults. Restraint as a design choice.
@@ -150,7 +150,9 @@ import {
 
 See [DESIGN.md](./DESIGN.md) for tokens, spacing, touch conventions, accessibility, and the FX model.
 
-**Demo gallery** (run `npm run dev:demo`): Components (`/`), Tokens (`/docs/tokens`), How to use (`/docs/how-to-use`). Each component section includes a **Copy prompt** action for AI tools.
+**Demo gallery** (run `npm run dev:demo`): Components (`/`), Principles (`/docs/principles`), Tokens (`/docs/tokens`), Haptics (`/docs/haptics`), How to use (`/docs/how-to-use`). Each component section includes a **Copy prompt** action for AI tools.
+
+**Hosted demo** (GitHub Pages): [palashjain95.github.io/touchable](https://palashjain95.github.io/touchable/) — deploys from `main` via `.github/workflows/deploy-demo.yml`. For a custom domain or root-path host, set `BASE_PATH=/` when building (`demo/vite.config.ts`).
 
 ---
 
@@ -210,13 +212,13 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR checklist.
 
 ## Contact
 
-**Palash Jain** — designer of Touchable
+**Palash Jain**, designer of Touchable
 
 - GitHub: [github.com/palashjain95](https://github.com/palashjain95)
 - LinkedIn: [linkedin.com/in/palash-jain-2565b612a](https://www.linkedin.com/in/palash-jain-2565b612a/)
 - Email: [palash95jain@gmail.com](mailto:palash95jain@gmail.com)
 
-Questions, feedback, or collaboration — reach out anytime.
+Questions, feedback, or collaboration? Reach out anytime.
 
 ---
 

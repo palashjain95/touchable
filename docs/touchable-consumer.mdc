@@ -40,8 +40,10 @@ Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles f
 - Crisp **1px rims**: surfaces have defined edges
 - Press feedback on `:active`, not hover-only affordances
 - **Accessible names** on icon-only buttons and unlabeled triggers
+- **iOS haptics** are built into Touchable components; disable with `configureHaptics({ enabled: false })`
 
 ## Reference
 
 Read `node_modules/@palashjain/touchable/DESIGN.md` for tokens, variants, and accessibility.
 Read `node_modules/@palashjain/touchable/INTEGRATION.md` for full setup.
+Read `node_modules/@palashjain/touchable/docs/ios-haptics.md` for haptic mapping and rules.

@@ -2,6 +2,7 @@ import * as React from 'react';
 import type { ReactNode } from 'react';
 
 import { pressableDivProps } from '../lib/a11y';
+import { withHapticPress, type HapticPressKind } from '../lib/haptics';
 import { cn } from '../lib/utils';
 
 const CARD_NEUTRAL_TOKEN_STYLE = {
@@ -191,6 +192,8 @@ type CardOptions = {
   size?: CardSize;
   urgency?: CardUrgency;
   interactive?: boolean;
+  /** Native iOS haptic on press when `interactive` (default light impact). */
+  haptic?: HapticPressKind;
 };
 
 export type CardProps = CardOptions &
@@ -224,6 +227,7 @@ export function Card({
   size = 'default',
   urgency = 'moderate',
   interactive = false,
+  haptic,
   className,
   children,
   onClick,
@@ -231,9 +235,18 @@ export function Card({
   ...props
 }: CardProps) {
   const fx = getCardFxStyles(urgency);
-  const pressable =
+  const shellProps =
     interactive && onClick
-      ? pressableDivProps({ onClick, onKeyDown, role: props.role, tabIndex: props.tabIndex })
+      ? withHapticPress({ ...props, onClick, onKeyDown, haptic }, 'light')
+      : { ...props, onClick, onKeyDown };
+  const pressable =
+    interactive && shellProps.onClick
+      ? pressableDivProps({
+          onClick: shellProps.onClick,
+          onKeyDown: shellProps.onKeyDown,
+          role: shellProps.role,
+          tabIndex: shellProps.tabIndex,
+        })
       : {};
 
   return (
@@ -241,8 +254,7 @@ export function Card({
       data-card=""
       className={cn(cardClass({ size, urgency, interactive }), className)}
       style={CARD_SHELL_STYLE}
-      {...props}
-      onClick={onClick}
+      {...shellProps}
       {...pressable}
     >
       <CardSurfaceFxLayers styles={fx} interactive={interactive} />

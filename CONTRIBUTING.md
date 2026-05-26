@@ -45,6 +45,33 @@ npm run ci
 
 ---
 
+## Commit messages
+
+Use [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>(<optional scope>): <short summary>
+```
+
+| Type | Use for |
+|------|---------|
+| `feat` | New feature or public API |
+| `fix` | Bug fix (not `bug`) |
+| `docs` | Documentation only |
+| `style` | Formatting, no logic change |
+| `refactor` | Code change, not feat/fix |
+| `perf` | Performance |
+| `test` | Tests only |
+| `build` | Build, deps, tooling |
+| `ci` | CI / GitHub Actions |
+| `chore` | Maintenance |
+
+Breaking changes: `feat!:` or `BREAKING CHANGE:` in the body. See [.cursor/rules/commits.mdc](./.cursor/rules/commits.mdc).
+
+Say **commit** in Cursor to auto-draft and create a commit (skill: [.cursor/skills/commit/SKILL.md](./.cursor/skills/commit/SKILL.md)). Say **prepare commit message** to draft only.
+
+---
+
 ## PR checklist
 
 - [ ] Follows design principles (44px targets, 1px rims, press feedback)
@@ -52,6 +79,7 @@ npm run ci
 - [ ] Demo page added or updated for public API changes
 - [ ] Smoke test added or updated
 - [ ] `npm run ci` passes locally
+- [ ] Commit messages follow Conventional Commits (`feat`, `fix`, `docs`, etc.)
 - [ ] `CHANGELOG.md` updated
 - [ ] No demo code exported from `src/index.ts`
 - [ ] No `@/` aliases in library source

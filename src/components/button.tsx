@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { withHapticPress, type HapticPressKind } from "../lib/haptics";
+
 const BTN_PRIMARY = "var(--primary)";
 
 /** Primary tokens: must live on the button and each FX layer for oklch(from var(--bg-accent) …). */
@@ -48,6 +50,10 @@ const TERTIARY_BUTTON_SIZE_CLASS = {
 } as const;
 
 export type ButtonSize = keyof typeof BUTTON_SIZE_CLASS;
+
+type HapticOption = { haptic?: HapticPressKind };
+
+export type { HapticPressKind };
 
 function getButtonClass(
   sizeClass: Record<string, string>,
@@ -327,15 +333,17 @@ function ButtonFxLayers({
 export type ButtonProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  fullWidth?: boolean;
-  size?: ButtonSize;
-  /** Overrides default primary fill (e.g. readiness accent). */
-  shellStyle?: React.CSSProperties;
-};
+> &
+  HapticOption & {
+    fullWidth?: boolean;
+    size?: ButtonSize;
+    /** Overrides default primary fill (e.g. readiness accent). */
+    shellStyle?: React.CSSProperties;
+  };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ type = "button", fullWidth = true, size = "default", shellStyle, children, ...props }, ref) => {
+    const buttonProps = withHapticPress(props, "light");
     return (
       <button
         ref={ref}
@@ -343,7 +351,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-button=""
         className={getButtonClass(BUTTON_SIZE_CLASS, size, fullWidth)}
         style={shellStyle ?? PRIMARY_BUTTON_STYLE}
-        {...props}
+        {...buttonProps}
       >
         <ButtonFxLayers
           styles={PRIMARY_FX_STYLES}
@@ -364,6 +372,7 @@ export const ButtonOutline = React.forwardRef<
   HTMLButtonElement,
   ButtonOutlineProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -371,7 +380,7 @@ export const ButtonOutline = React.forwardRef<
       data-button=""
       className={getButtonClass(BUTTON_SIZE_CLASS, size, fullWidth)}
       style={PRIMARY_OUTLINE_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers styles={PRIMARY_OUTLINE_FX_STYLES} />
       <span data-button-content="true" className={CONTENT_CLASS}>
@@ -416,6 +425,7 @@ export const ButtonDestructive = React.forwardRef<
     ref,
   ) => {
     const stacked = layout === "stacked";
+    const buttonProps = withHapticPress(props, "medium");
     return (
       <button
         ref={ref}
@@ -427,7 +437,7 @@ export const ButtonDestructive = React.forwardRef<
             : getButtonClass(BUTTON_SIZE_CLASS, size, fullWidth)
         }
         style={DESTRUCTIVE_BUTTON_STYLE}
-        {...props}
+        {...buttonProps}
       >
         <ButtonFxLayers
           styles={PRIMARY_FX_STYLES}
@@ -465,6 +475,7 @@ export const ButtonAffirmative = React.forwardRef<
   HTMLButtonElement,
   ButtonAffirmativeProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -472,7 +483,7 @@ export const ButtonAffirmative = React.forwardRef<
       data-button=""
       className={getButtonClass(BUTTON_SIZE_CLASS, size, fullWidth)}
       style={AFFIRMATIVE_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers
         styles={PRIMARY_FX_STYLES}
@@ -493,6 +504,7 @@ export const ButtonNeutral = React.forwardRef<
   ButtonNeutralProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
   const contentClass = size === "compact" ? CONTENT_CLASS_COMPACT : CONTENT_CLASS;
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -500,7 +512,7 @@ export const ButtonNeutral = React.forwardRef<
       data-button=""
       className={getButtonClass(NEUTRAL_BUTTON_SIZE_CLASS, size, fullWidth)}
       style={NEUTRAL_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers styles={NEUTRAL_FX_STYLES} />
       <span data-button-content="true" className={contentClass}>
@@ -517,21 +529,24 @@ export type ButtonNeutralPillProps = Omit<ButtonProps, "size" | "shellStyle">;
 
 /** Pill-shaped neutral control for filters and toolbar dropdowns (rounded-full, 48px). */
 export const ButtonNeutralPill = React.forwardRef<HTMLButtonElement, ButtonNeutralPillProps>(
-  ({ type = "button", fullWidth = false, children, ...props }, ref) => (
+  ({ type = "button", fullWidth = false, children, ...props }, ref) => {
+    const buttonProps = withHapticPress(props, "light");
+    return (
     <button
       ref={ref}
       type={type}
       data-button=""
       className={`${NEUTRAL_PILL_BUTTON_CLASS} ${fullWidth ? "w-full" : "w-auto"}`}
       style={NEUTRAL_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers styles={NEUTRAL_FX_STYLES} />
       <span data-button-content="true" className={CONTENT_CLASS_TERTIARY_COMPACT}>
         {children}
       </span>
     </button>
-  ),
+    );
+  },
 );
 ButtonNeutralPill.displayName = "ButtonNeutralPill";
 
@@ -543,6 +558,7 @@ export const ButtonTertiary = React.forwardRef<
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
   const contentClass =
     size === "compact" ? CONTENT_CLASS_TERTIARY_COMPACT : CONTENT_CLASS;
+  const buttonProps = withHapticPress(props, "none");
   return (
     <button
       ref={ref}
@@ -550,7 +566,7 @@ export const ButtonTertiary = React.forwardRef<
       data-button=""
       className={getButtonClass(TERTIARY_BUTTON_SIZE_CLASS, size, fullWidth)}
       style={TERTIARY_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonTertiaryFxLayers />
       <span data-button-content="true" className={contentClass}>
@@ -577,6 +593,7 @@ export const ButtonInverse = React.forwardRef<
 >(({ type = "button", fullWidth = true, size = "compact", children, ...props }, ref) => {
   const contentClass =
     size === "cta" ? CONTENT_CLASS_INVERSE_SM : size === "compact" ? CONTENT_CLASS_COMPACT : CONTENT_CLASS;
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -584,7 +601,7 @@ export const ButtonInverse = React.forwardRef<
       data-button=""
       className={getButtonClass(INVERSE_BUTTON_SIZE_CLASS, size, fullWidth)}
       style={INVERSE_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers
         styles={INVERSE_FX_STYLES}
@@ -616,16 +633,18 @@ export type ButtonIconSize = keyof typeof ROUND_ICON_SIZE_CLASS;
 export type ButtonIconProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  size?: ButtonIconSize;
-  /** Required: icon-only buttons have no visible text label. */
-  "aria-label": string;
-};
+> &
+  HapticOption & {
+    size?: ButtonIconSize;
+    /** Required: icon-only buttons have no visible text label. */
+    "aria-label": string;
+  };
 
 export const ButtonIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -633,7 +652,7 @@ export const ButtonIcon = React.forwardRef<
       data-button=""
       className={`${BUTTON_PRIMARY_ROUND_ICON_BASE} ${ROUND_ICON_SIZE_CLASS[size]}`}
       style={PRIMARY_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers
         styles={PRIMARY_FX_STYLES}
@@ -652,14 +671,16 @@ export type ButtonInverseIconSize = keyof typeof ROUND_ICON_SIZE_CLASS;
 export type ButtonInverseIconProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  size?: ButtonInverseIconSize;
-};
+> &
+  HapticOption & {
+    size?: ButtonInverseIconSize;
+  };
 
 export const ButtonInverseIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonInverseIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -667,7 +688,7 @@ export const ButtonInverseIcon = React.forwardRef<
       data-button=""
       className={`${BUTTON_PRIMARY_ROUND_ICON_BASE} ${ROUND_ICON_SIZE_CLASS[size]}`}
       style={INVERSE_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers
         styles={INVERSE_FX_STYLES}
@@ -686,14 +707,16 @@ export type ButtonOutlineIconSize = keyof typeof ROUND_ICON_SIZE_CLASS;
 export type ButtonOutlineIconProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  size?: ButtonOutlineIconSize;
-};
+> &
+  HapticOption & {
+    size?: ButtonOutlineIconSize;
+  };
 
 export const ButtonOutlineIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonOutlineIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "light");
   return (
     <button
       ref={ref}
@@ -701,7 +724,7 @@ export const ButtonOutlineIcon = React.forwardRef<
       data-button=""
       className={`${BUTTON_PRIMARY_ROUND_ICON_BASE} ${ROUND_ICON_SIZE_CLASS[size]}`}
       style={PRIMARY_OUTLINE_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers styles={PRIMARY_OUTLINE_FX_STYLES} />
       <span data-button-content="true" className={CONTENT_ICON_CLASS}>
@@ -734,15 +757,17 @@ export type ButtonNeutralIconTone = "default" | "destructive";
 export type ButtonNeutralIconProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  size?: ButtonNeutralIconSize;
-  tone?: ButtonNeutralIconTone;
-};
+> &
+  HapticOption & {
+    size?: ButtonNeutralIconSize;
+    tone?: ButtonNeutralIconTone;
+  };
 
 export const ButtonNeutralIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonNeutralIconProps
 >(({ type = "button", size = "default", tone = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, tone === "destructive" ? "medium" : "light");
   return (
     <button
       ref={ref}
@@ -750,7 +775,7 @@ export const ButtonNeutralIcon = React.forwardRef<
       data-button=""
       className={`${BUTTON_NEUTRAL_ROUND_ICON_BASE} ${NEUTRAL_ROUND_ICON_SIZE_CLASS[size]}`}
       style={tone === "destructive" ? NEUTRAL_DESTRUCTIVE_BUTTON_STYLE : NEUTRAL_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonFxLayers styles={NEUTRAL_FX_STYLES} />
       <span data-button-content="true" className={CONTENT_ICON_CLASS}>
@@ -789,21 +814,23 @@ export function NeutralIconBadge({ size = "sm", children }: NeutralIconBadgeProp
 export type ButtonNeutralIconLinkProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   "className" | "style"
-> & {
-  size?: ButtonNeutralIconSize;
-};
+> &
+  HapticOption & {
+    size?: ButtonNeutralIconSize;
+  };
 
 export const ButtonNeutralIconLink = React.forwardRef<
   HTMLAnchorElement,
   ButtonNeutralIconLinkProps
 >(({ size = "default", children, ...props }, ref) => {
+  const linkProps = withHapticPress(props, "light");
   return (
     <a
       ref={ref}
       data-button=""
       className={`${BUTTON_NEUTRAL_ROUND_ICON_BASE} ${NEUTRAL_ROUND_ICON_SIZE_CLASS[size]} p-1`}
       style={NEUTRAL_BUTTON_STYLE}
-      {...props}
+      {...linkProps}
     >
       <ButtonFxLayers styles={NEUTRAL_FX_STYLES} />
       <span data-button-content="true" className={CONTENT_ICON_CLASS}>
@@ -825,17 +852,21 @@ const LINK_BUTTON_STYLE: React.CSSProperties = {
 export type ButtonLinkProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   "className" | "style"
->;
+> &
+  HapticOption;
 
 /** Text link for navigation and secondary exits (uses --fg-link). */
 export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
-  ({ children, ...props }, ref) => (
-    <a ref={ref} data-button="" className={LINK_BUTTON_CLASS} style={LINK_BUTTON_STYLE} {...props}>
+  ({ children, ...props }, ref) => {
+    const linkProps = withHapticPress(props, "light");
+    return (
+    <a ref={ref} data-button="" className={LINK_BUTTON_CLASS} style={LINK_BUTTON_STYLE} {...linkProps}>
       <span data-button-content="true" className="relative z-30">
         {children}
       </span>
     </a>
-  ),
+    );
+  },
 );
 ButtonLink.displayName = "ButtonLink";
 
@@ -890,15 +921,17 @@ export type ButtonTertiaryIconTone = "default" | "destructive";
 export type ButtonTertiaryIconProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "style"
-> & {
-  size?: ButtonTertiaryIconSize;
-  tone?: ButtonTertiaryIconTone;
-};
+> &
+  HapticOption & {
+    size?: ButtonTertiaryIconSize;
+    tone?: ButtonTertiaryIconTone;
+  };
 
 export const ButtonTertiaryIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonTertiaryIconProps
 >(({ type = "button", size = "default", tone = "default", children, ...props }, ref) => {
+  const buttonProps = withHapticPress(props, "none");
   return (
     <button
       ref={ref}
@@ -906,7 +939,7 @@ export const ButtonTertiaryIcon = React.forwardRef<
       data-button=""
       className={`${BUTTON_TERTIARY_ROUND_ICON_BASE} ${TERTIARY_ROUND_ICON_SIZE_CLASS[size]}`}
       style={tone === "destructive" ? TERTIARY_DESTRUCTIVE_BUTTON_STYLE : TERTIARY_BUTTON_STYLE}
-      {...props}
+      {...buttonProps}
     >
       <ButtonTertiaryFxLayers />
       <span data-button-content="true" className={CONTENT_ICON_CLASS}>
@@ -951,8 +984,8 @@ export type ButtonDiscProps = ButtonNeutralIconProps & {
  * Matches Notey `ButtonNeutralRoundIcon` + quick-practice disc pattern.
  */
 export const ButtonDisc = React.forwardRef<HTMLButtonElement, ButtonDiscProps>(
-  ({ children, selected, swatchColor, ...props }, ref) => (
-    <ButtonNeutralIcon ref={ref} {...props}>
+  ({ children, selected, swatchColor, haptic, ...props }, ref) => (
+    <ButtonNeutralIcon ref={ref} haptic={haptic ?? "selection"} {...props}>
       {swatchColor ? (
         <span
           data-disc-swatch=""

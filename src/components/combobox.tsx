@@ -1,5 +1,5 @@
 /**
- * Combobox — fixed-option select (Radix Select, `role="combobox"` on trigger).
+ * Combobox: fixed-option select (Radix Select, `role="combobox"` on trigger).
  * Same implementation as Dropdown; use Combobox naming in forms and docs.
  */
 export {

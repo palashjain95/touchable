@@ -11,6 +11,7 @@ export const componentSnippets = {
   ButtonTertiary,
   ButtonOutline,
   ButtonDestructive,
+  ButtonInverse,
   ButtonIcon,
   ButtonDisc,
   ButtonLink,
@@ -20,6 +21,8 @@ export const componentSnippets = {
 
 <Button size="default" fullWidth={false}>Save</Button>
 <ButtonNeutral size="compact" fullWidth={false}>Cancel</ButtonNeutral>
+<ButtonDestructive fullWidth>Delete</ButtonDestructive>
+<ButtonInverse size="compact" fullWidth={false}>Get started</ButtonInverse>
 <ButtonLink href="/docs/tokens">View tokens</ButtonLink>
 <ButtonIconLinkLabeled href="/docs" label="How to use" icon={<Icon />} />
 
@@ -27,7 +30,7 @@ export const componentSnippets = {
 // ButtonDisc: swatchColor for theme picker
 // ButtonIconLinkLabeled: round icon link + label beside`,
     agentPrompt:
-      "Use Touchable Button for the main action; ButtonNeutral secondary; ButtonLink for text links; ButtonIconLinkLabeled for icon+label links; ButtonDisc for colour picker.",
+      "Use Touchable Button for the main action; ButtonNeutral secondary; ButtonDestructive for delete; ButtonInverse on --surface-inverse; ButtonLink for text links; ButtonIconLinkLabeled for icon+label links; ButtonDisc for colour picker. iOS haptics are automatic; configureHaptics({ enabled: false }) to disable globally.",
   },
   searchField: {
     code: `import { SearchField } from "@palashjain/touchable";
@@ -69,7 +72,7 @@ export const componentSnippets = {
   </ComboboxContent>
 </Combobox>
 
-// Same as Dropdown — Radix Select with combobox role on trigger`,
+// Same as Dropdown. Radix Select with combobox role on trigger.`,
     agentPrompt:
       "Use Touchable Combobox (or Dropdown) with variant field in forms and pill in filters; fixed option lists only.",
   },

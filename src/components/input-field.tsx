@@ -14,7 +14,7 @@ const FIELD_UTILITIES =
 
 export type InputFieldSize = keyof typeof SIZE_CLASS;
 
-/** Class string for a native `<input>` — matches Notey auth/settings fields. */
+/** Class string for a native `<input>`. Matches Notey auth/settings fields. */
 export function inputFieldClass(
   size: InputFieldSize = "compact",
   className?: string,

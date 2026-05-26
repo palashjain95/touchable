@@ -3,6 +3,11 @@ import * as Touchable from "../index";
 
 const EXPORT_NAMES = [
   "cn",
+  "configureHaptics",
+  "hapticLightImpact",
+  "hapticNotification",
+  "withHapticPress",
+  "HapticsProvider",
   "Button",
   "ButtonOutline",
   "ButtonDestructive",

@@ -190,6 +190,49 @@ Same as Cursor: copy `docs/touchable-consumer.mdc` into your consumer `.cursor/r
 
 ---
 
+## iOS haptics (Capacitor)
+
+Apple Haptics let you feel the UI when you touch the screen. Touchable builds that into components so you never wire haptics yourself. Native iOS apps (Capacitor) get them automatically when you use `Button`, `Tabs`, `Pill`, `Card`, and the rest.
+
+### Install (native app only)
+
+```bash
+npm install @capacitor/core @capacitor/haptics
+```
+
+Optional peer dependencies. Web builds work without them.
+
+### Disable globally
+
+```ts
+import { configureHaptics } from "@palashjain/touchable";
+
+configureHaptics({ enabled: false });
+```
+
+Or wrap the app:
+
+```tsx
+import { HapticsProvider } from "@palashjain/touchable";
+
+<HapticsProvider enabled={settings.haptics}>
+  <App />
+</HapticsProvider>
+```
+
+### Outcomes (save / delete)
+
+```ts
+import { hapticNotification } from "@palashjain/touchable";
+
+hapticNotification("success"); // after mutation succeeds
+hapticNotification("error");   // on failure
+```
+
+Full reference: `docs/ios-haptics.md` and the demo **Haptics** page.
+
+---
+
 ## Quick reference
 
 | Need | Use |
@@ -206,8 +249,10 @@ Same as Cursor: copy `docs/touchable-consumer.mdc` into your consumer `.cursor/r
 | Segmented nav | `Tabs` + `TabsList` + `TabsTrigger` |
 | Icon sizing | `Icon` with `size="md"` (decorative) |
 | Icon-only button | `ButtonIcon` with `aria-label` |
+| iOS haptics off | `configureHaptics({ enabled: false })` |
+| Save/delete feedback | `hapticNotification("success" \| "error")` |
 
-Run `npm run dev:demo` for the live gallery: **Components**, **Tokens**, **How to use** (copy-paste prompts per section).
+Run `npm run dev:demo` for the live gallery: **Principles**, **Haptics**, **Components**, **Tokens**, **How to use**.
 
 ---
 

@@ -7,7 +7,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom", "@radix-ui/react-tabs"],
+  external: ["react", "react-dom", "@radix-ui/react-tabs", "@capacitor/core", "@capacitor/haptics"],
   onSuccess: async () => {
     mkdirSync("dist", { recursive: true });
     copyFileSync("src/styles/tokens.css", "dist/styles.css");

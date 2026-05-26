@@ -4,7 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
 export default defineConfig(({ command }) => ({
-  publicDir: path.resolve(__dirname, "../public"),
+  base: process.env.BASE_PATH ?? "/",
+  publicDir: path.resolve(__dirname, "public"),
   plugins: [react(), tailwindcss()],
   resolve: {
     alias:

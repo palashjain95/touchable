@@ -4,7 +4,7 @@ import {
   ButtonNeutral,
   ButtonTertiary,
   ButtonOutline,
-  ButtonDestructive,
+  ButtonInverse,
   ButtonIcon,
   ButtonDisc,
   ButtonLink,
@@ -49,9 +49,15 @@ export function ComponentsPage() {
   return (
     <div className="space-y-10">
       <header className="space-y-3">
-        <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--fg-primary)]">
-          Touchable
-        </h1>
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--fg-primary)]">
+            Touchable
+          </h1>
+          <div className="flex items-center gap-3">
+            <p className="text-xs font-medium text-[var(--fg-tertiary)]">Primary colour</p>
+            <PrimaryColorPicker />
+          </div>
+        </div>
         <p className="text-lg text-[var(--fg-secondary)]">
           Touch-first React components: crisp, readable, and intentionally designed.
         </p>
@@ -62,12 +68,15 @@ export function ComponentsPage() {
           <ButtonOutline fullWidth={false} size="compact" onClick={() => navigate("/docs/tokens")}>
             Tokens
           </ButtonOutline>
+          <ButtonNeutral fullWidth={false} size="compact" onClick={() => navigate("/docs/haptics")}>
+            Haptics
+          </ButtonNeutral>
         </div>
       </header>
 
       <ComponentSection
         title="Button"
-        description="Primary, neutral, tertiary, outline, destructive, icon, disc, link, and icon link with label."
+        description="Primary, neutral, tertiary, outline, inverse, icon, disc, link, and icon link with label."
         agentPrompt={componentSnippets.button.agentPrompt}
       >
         <PreviewGrid>
@@ -75,7 +84,9 @@ export function ComponentsPage() {
           <ButtonNeutral fullWidth={false}>Neutral</ButtonNeutral>
           <ButtonTertiary fullWidth={false}>Tertiary</ButtonTertiary>
           <ButtonOutline fullWidth={false}>Outline</ButtonOutline>
-          <ButtonDestructive fullWidth={false}>Destructive</ButtonDestructive>
+          <ButtonInverse type="button" fullWidth={false}>
+            Inverse
+          </ButtonInverse>
         </PreviewGrid>
         <Preview className="mt-4 space-y-4">
           <div>
@@ -87,7 +98,6 @@ export function ComponentsPage() {
               <ButtonDisc type="button" aria-label="Voice practice">
                 <MicrophoneIcon className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
               </ButtonDisc>
-              <PrimaryColorPicker />
             </div>
           </div>
           <div>
@@ -106,31 +116,31 @@ export function ComponentsPage() {
             <div className="flex flex-wrap gap-6">
               <div className="flex flex-col items-start gap-2">
                 <span className="text-sm text-[var(--fg-primary)]">Default</span>
+                <p className="text-xs font-medium text-[var(--fg-tertiary)]">default · h-11 (44px)</p>
                 <Button size="default" fullWidth={false}>
                   Button
                 </Button>
-                <SizeLabel>default · h-11 (44px)</SizeLabel>
               </div>
               <div className="flex flex-col items-start gap-2">
                 <span className="text-sm text-[var(--fg-primary)]">Compact</span>
+                <p className="text-xs font-medium text-[var(--fg-tertiary)]">compact · h-9 (36px)</p>
                 <Button size="compact" fullWidth={false}>
                   Button
                 </Button>
-                <SizeLabel>compact · h-9 (36px)</SizeLabel>
               </div>
               <div className="flex flex-col items-start gap-2">
                 <span className="text-sm text-[var(--fg-primary)]">Icon</span>
+                <p className="text-xs font-medium text-[var(--fg-tertiary)]">icon · default</p>
                 <ButtonIcon aria-label="Add">
                   <PlusIcon data-default-size aria-hidden />
                 </ButtonIcon>
-                <SizeLabel>icon · default</SizeLabel>
               </div>
               <div className="flex flex-col items-start gap-2">
                 <span className="text-sm text-[var(--fg-primary)]">Disabled</span>
+                <p className="text-xs font-medium text-[var(--fg-tertiary)]">disabled</p>
                 <Button disabled fullWidth={false}>
                   Button
                 </Button>
-                <SizeLabel>disabled</SizeLabel>
               </div>
             </div>
           </div>

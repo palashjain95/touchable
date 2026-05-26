@@ -93,14 +93,14 @@ export function TokensPage() {
   return (
     <div className="min-w-0 space-y-2">
       <header className="mb-8 space-y-3">
+        <p className="text-xs font-normal tracking-wide text-[var(--primary)] mb-0">Touchable</p>
         <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--fg-primary)]">
           Tokens
         </h1>
         <Why>
-          Tokens are the contract between design and code. Touchable is light-first and touch-first:
-          warm neutrals, one accent, crisp 1px rims, and a small type scale so screens stay scannable
-          on a phone. Use semantic names (<code className="text-[var(--fg-tertiary)]">--fg-primary</code>
-          , not raw grays) so dark mode and future themes stay coherent.
+          Design decisions, token definitions, and the standards we follow. Semantic names (for
+          example <code className="text-[var(--fg-tertiary)]">--fg-primary</code>) keep themes
+          consistent.
         </Why>
       </header>
 
@@ -109,9 +109,7 @@ export function TokensPage() {
         description="Four foreground tiers. If everything is primary, nothing is."
       >
         <Why>
-          Hierarchy is how we keep interfaces readable without adding color noise. Primary carries
-          meaning; tertiary is for metadata you can skip when scanning. Avoid gray-on-gray body
-          pairs—secondary on a muted surface is the floor for supporting copy.
+          Primary is for content. Secondary and tertiary are for supporting text you can skim.
         </Why>
         <Preview className="mt-4 space-y-0 divide-y divide-[hsl(var(--border-subtle))]">
           {fgSwatches.map(([token, label, use]) => (
@@ -121,7 +119,7 @@ export function TokensPage() {
               note={use}
               sample={
                 <p className="text-base font-medium" style={{ color: `var(${token})` }}>
-                  {label} — The quick brown fox
+                  {label}: The quick brown fox
                 </p>
               }
             />
@@ -134,9 +132,8 @@ export function TokensPage() {
         description="Background stack from recessed to elevated."
       >
         <Why>
-          Surfaces create depth without blur. We stack a few HSL steps on a warm hue (45°) so panels
-          feel paper-like in light mode and layered in dark mode. Pick the shallowest layer that
-          still separates content—don’t float every block on surface-secondary.
+          Use the shallowest surface that still separates content. Prefer steps + rims over heavy
+          shadow stacks.
         </Why>
         <Preview className="mt-4 space-y-2">
           {surfaceLayers.map(([token, label, use]) => (
@@ -157,9 +154,7 @@ export function TokensPage() {
 
       <Section title="Semantic color" description="Status and brand. Not decoration.">
         <Why>
-          Primary is your brand accent (overridable in the demo via the colour disc). Success,
-          warning, and destructive are reserved for state—card urgency accents, alerts, and
-          destructive buttons—not for making lists colourful.
+          Primary is the brand accent. Success, warning, and destructive are for state only.
         </Why>
         <Preview className="mt-4 grid gap-4 sm:grid-cols-2">
           {semanticColors.map(([name, color, use]) => (
@@ -182,10 +177,7 @@ export function TokensPage() {
         description="Inter for UI and display. One family, clear roles."
       >
         <Why>
-          We use a single sans family (<code className="text-[var(--fg-tertiary)]">--font-body</code>{" "}
-          / <code className="text-[var(--fg-tertiary)]">--font-display</code>) so rhythm stays
-          consistent. Display is semantic naming for marketing weight (semibold + tight tracking),
-          not a second typeface. Mono is for code snippets only.
+          One sans family for everything. Display is a role (weight + tracking), not a second font.
         </Why>
 
         <div className="mt-4 space-y-6">
@@ -193,16 +185,16 @@ export function TokensPage() {
             <h3 className="mb-2 text-sm font-medium text-[var(--fg-primary)]">Roles</h3>
             <Preview className="space-y-3">
               <p className="font-display text-2xl font-semibold tracking-tight text-[var(--fg-primary)]">
-                Display / page title — 2xl, semibold, tracking-tight
+                Display / page title: 2xl, semibold, tracking-tight
               </p>
               <p className="font-display text-xl font-semibold text-[var(--fg-primary)]">
-                Section title — xl, semibold
+                Section title: xl, semibold
               </p>
-              <p className="text-base text-[var(--fg-primary)]">Body — base, normal weight</p>
-              <p className="text-sm text-[var(--fg-secondary)]">Secondary — sm, fg-secondary</p>
-              <p className="text-xs text-[var(--fg-tertiary)]">Tertiary / caption — xs, fg-tertiary</p>
+              <p className="text-base text-[var(--fg-primary)]">Body: base, normal weight</p>
+              <p className="text-sm text-[var(--fg-secondary)]">Secondary: sm, fg-secondary</p>
+              <p className="text-xs text-[var(--fg-tertiary)]">Tertiary / caption: xs, fg-tertiary</p>
               <p className="text-[10px] font-medium uppercase tracking-widest text-[var(--fg-secondary)]">
-                Label — 10px, medium, widest tracking
+                Label: 10px, medium, widest tracking
               </p>
             </Preview>
           </div>
@@ -217,7 +209,7 @@ export function TokensPage() {
                   note={use}
                   sample={
                     <p className="text-[var(--fg-primary)]" style={{ fontSize: size }}>
-                      {size} — Touchable
+                      {size}: Touchable
                     </p>
                   }
                 />
@@ -253,7 +245,7 @@ export function TokensPage() {
                     className="mt-1 max-w-md text-sm text-[var(--fg-primary)]"
                     style={{ lineHeight: height }}
                   >
-                    {use}. Multi-line sample at {height} leading for comparison.
+                    {use}. Sample at {height}.
                   </p>
                 </div>
               ))}
@@ -285,9 +277,7 @@ export function TokensPage() {
 
       <Section title="Spacing" description="4px base unit via --spacing.">
         <Why>
-          <code className="text-[var(--fg-tertiary)]">--spacing: 0.25rem</code> (4px) aligns with
-          Tailwind’s default scale. Touch targets use fixed heights (44px / 36px) rather than
-          padding hacks so tap areas stay honest on mobile.
+          <code className="text-[var(--fg-tertiary)]">--spacing: 0.25rem</code> (4px) matches Tailwind.
         </Why>
         <Preview className="mt-4 flex flex-wrap items-end gap-3">
           {[1, 2, 3, 4, 6, 8].map((n) => (
@@ -307,10 +297,7 @@ export function TokensPage() {
 
       <Section title="Radius" description="Corners tied to component size, not arbitrary px.">
         <Why>
-          Rectangle cards use <code className="text-[var(--fg-tertiary)]">rounded-3xl</code>{" "}
-          (1.5rem); compact rows use <code className="text-[var(--fg-tertiary)]">rounded-xl</code>.
-          Pills and tray cards are full round. Matching radius to component type keeps the UI feeling
-          systematic instead of “rounded because we can.”
+          Radius is tied to component type. Bigger surfaces get bigger corners.
         </Why>
         <Preview className="mt-4 flex flex-wrap gap-4">
           {radii.map(([token, label, use]) => (
@@ -334,32 +321,25 @@ export function TokensPage() {
 
       <Section title="Border & rim" description="1px crisp edges on interactive surfaces.">
         <Why>
-          <code className="text-[var(--fg-tertiary)]">--border-default: 1px</code> is the Touchable
-          signature: buttons and cards get an inset rim, not a heavy drop shadow. Use{" "}
-          <code className="text-[var(--fg-tertiary)]">--border-subtle</code> for dividers;{" "}
-          <code className="text-[var(--fg-tertiary)]">--border-strong</code> when a separator must
-          read clearly.
+          <code className="text-[var(--fg-tertiary)]">--border-default: 1px</code> is the signature.
+          Use subtle for dividers and strong for emphasis.
         </Why>
         <Preview className="mt-4 space-y-3">
           <div className="rounded-xl border border-[hsl(var(--border-subtle))] bg-[hsl(var(--surface-base))] p-4 text-sm">
-            border-subtle — dividers, preview wells
+            border-subtle: dividers, preview wells
           </div>
           <div className="rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--surface-secondary))] p-4 text-sm">
-            border — default control outline
+            border: default control outline
           </div>
           <div className="rounded-xl border border-[hsl(var(--border-strong))] bg-[hsl(var(--surface-secondary))] p-4 text-sm">
-            border-strong — emphasis separators
+            border-strong: emphasis separators
           </div>
         </Preview>
       </Section>
 
       <Section title="Motion" description="Fast, purposeful. Press feedback over hover theatre.">
         <Why>
-          Default transition is{" "}
-          <code className="text-[var(--fg-tertiary)]">150ms</code> with a standard ease curve. Button
-          FX layers snap to zero duration on <code className="text-[var(--fg-tertiary)]">:active</code>{" "}
-          so press feels immediate; hover is disabled on touch devices. Spring easing is for
-          delight (tabs indicator), not every hover state.
+          Defaults are quick. Press feedback matters more than hover.
         </Why>
         <Preview className="mt-4 text-sm text-[var(--fg-secondary)]">
           <ul className="list-inside list-disc space-y-1">
@@ -367,10 +347,10 @@ export function TokensPage() {
               <code className="text-xs">--default-transition-duration: 0.15s</code>
             </li>
             <li>
-              <code className="text-xs">--ease-spring</code> — tabs, playful micro-interactions
+              <code className="text-xs">--ease-spring</code>: tabs, playful micro-interactions
             </li>
             <li>
-              <code className="text-xs">--ease-out</code> — menus opening, content appearing
+              <code className="text-xs">--ease-out</code>: menus opening, content appearing
             </li>
           </ul>
         </Preview>
@@ -378,21 +358,13 @@ export function TokensPage() {
 
       <Section title="Elevation" description="Shadows for floating layers only.">
         <Why>
-          Prefer surface steps and rims over shadow stacks. Production dropdowns use one{" "}
-          <code className="text-[var(--fg-tertiary)]">border</code> plus a single outer drop shadow—not{" "}
-          <code className="text-[var(--fg-tertiary)]">--shadow-surface-md</code> on top of a border.
-          The <code className="text-[var(--fg-tertiary)]">--shadow-surface-*</code> tokens already bake
-          in inset and outer rims; adding <code className="text-[var(--fg-tertiary)]">border</code>{" "}
-          doubles the edge. Buttons bake depth into FX layers, not surface shadow stacks.
+          Use shadows for floating layers only (Dropdown, Dialog). Most surfaces should read via
+          steps + rims.
         </Why>
         <Preview className="mt-4 flex flex-wrap gap-4">
           <div className="min-w-[12rem] flex-1 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--surface-secondary))] p-6 shadow-[0_8px_20px_-6px_light-dark(oklch(0_0_0/0.14),oklch(0_0_0/0.45))]">
             <p className="text-sm text-[var(--fg-primary)]">Floating menu</p>
             <p className="mt-1 text-xs text-[var(--fg-tertiary)]">border + one outer shadow (Dropdown)</p>
-          </div>
-          <div className="min-w-[12rem] flex-1 rounded-xl border-0 bg-[hsl(var(--surface-secondary))] p-6 [box-shadow:var(--shadow-surface-md)]">
-            <p className="text-sm text-[var(--fg-primary)]">shadow-surface-md</p>
-            <p className="mt-1 text-xs text-[var(--fg-tertiary)]">token only—no extra border</p>
           </div>
         </Preview>
       </Section>

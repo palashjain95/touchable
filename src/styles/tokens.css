@@ -1,7 +1,8 @@
 /* Touchable design tokens: light-first, touch-first, crisp edges */
 
 @layer base {
-  :root {
+  :root,
+  .light {
     color-scheme: light;
 
     /* ----- shadcn / HSL primitives (light) ----- */
@@ -683,7 +684,7 @@
   }
 }
 
-/* Form text inputs — shell border/background; typography via InputField utilities */
+/* Form text inputs: shell border/background; typography via InputField utilities */
 .input-field {
   box-sizing: border-box;
   border: 1px solid hsl(var(--input));

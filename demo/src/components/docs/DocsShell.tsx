@@ -1,14 +1,21 @@
 import { useEffect, type ReactNode } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { BookOpenIcon, Squares2X2Icon, SwatchIcon } from "@heroicons/react/24/outline";
+import {
+  BookOpenIcon,
+  HeartIcon,
+  HandRaisedIcon,
+  Squares2X2Icon,
+  SwatchIcon,
+} from "@heroicons/react/24/outline";
 import { cn } from "@palashjain/touchable";
 import { DocsAppearanceControls } from "./DocsAppearanceControls";
 import { DocsBrandLogo } from "./DocsBrandLogo";
-import { applyDefaultPrimary } from "../../lib/demoPrimary";
 
 const NAV = [
+  { to: "/docs/principles", label: "Principles", end: false, icon: HeartIcon },
   { to: "/", label: "Components", end: true, icon: Squares2X2Icon },
   { to: "/docs/tokens", label: "Tokens", end: false, icon: SwatchIcon },
+  { to: "/docs/haptics", label: "Haptics", end: false, icon: HandRaisedIcon },
   { to: "/docs/how-to-use", label: "How to use", end: false, icon: BookOpenIcon },
 ] as const;
 
@@ -23,10 +30,6 @@ function navItemClass(isActive: boolean) {
 
 export function DocsShell({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    applyDefaultPrimary();
-  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -69,7 +72,7 @@ export function DocsShell({ children }: { children: ReactNode }) {
             ))}
           </nav>
 
-          <footer className="mt-auto border-t border-[hsl(var(--border-subtle))] pt-4">
+          <footer className="mt-auto pt-4">
             <Link
               to="/docs/designer"
               className="flex items-center gap-3 rounded-lg p-1 transition-colors hover:bg-[hsl(var(--muted-hover))]"
@@ -89,9 +92,10 @@ export function DocsShell({ children }: { children: ReactNode }) {
         <div className="flex h-14 items-center gap-3 px-4">
           <Link
             to="/"
-            className="min-w-0 shrink font-display text-lg font-semibold text-[var(--fg-primary)]"
+            className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-[hsl(var(--muted-hover))]"
+            aria-label="Touchable home"
           >
-            Touchable
+            <span className="font-display text-xl font-semibold leading-none text-[var(--fg-primary)]">T</span>
           </Link>
           <div className="ml-auto shrink-0">
             <DocsAppearanceControls />

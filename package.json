@@ -1,7 +1,7 @@
 {
   "name": "@palashjain/touchable",
   "version": "0.1.0",
-  "description": "Touch-first React design system — beautiful UI that reads.",
+  "description": "Touch-first React design system. Beautiful UI that reads.",
   "author": "Palash Jain",
   "license": "MIT",
   "type": "module",
@@ -15,6 +15,7 @@
     "dist",
     "DESIGN.md",
     "INTEGRATION.md",
+    "docs/ios-haptics.md",
     "docs/touchable-consumer.mdc"
   ],
   "exports": {
@@ -35,11 +36,19 @@
     "ci": "npm run lint && npm run typecheck && npm run test && npm run build && npm run build:demo"
   },
   "peerDependencies": {
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/haptics": "^8.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "peerDependenciesMeta": {
     "@heroicons/react": {
+      "optional": true
+    },
+    "@capacitor/core": {
+      "optional": true
+    },
+    "@capacitor/haptics": {
       "optional": true
     }
   },
@@ -50,6 +59,8 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/haptics": "^8.0.2",
     "@eslint/js": "^9.32.0",
     "@tailwindcss/vite": "^4.0.0",
     "@testing-library/jest-dom": "^6.6.3",

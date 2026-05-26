@@ -1,16 +1,45 @@
 import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
+import { hapticTabChange } from "../lib/haptics";
 import { cn } from "../lib/utils";
-import { TabsList, TabsTrigger } from "./tabs-list";
+import { TabsActiveValueContext, TabsList, TabsTrigger } from "./tabs-list";
 
-const Tabs = TabsPrimitive.Root;
+const Tabs = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root>
+>(({ value, defaultValue, onValueChange, ...props }, ref) => {
+  const isControlled = value !== undefined;
+  const [uncontrolledValue, setUncontrolledValue] = React.useState(defaultValue ?? "");
+  const [optimisticValue, setOptimisticValue] = React.useState<string | null>(null);
 
-// TabsList exported from tabs-list;
+  const resolvedValue = isControlled ? value : uncontrolledValue;
+  const indicatorValue = optimisticValue ?? resolvedValue;
 
+  React.useEffect(() => {
+    if (optimisticValue !== null && optimisticValue === resolvedValue) {
+      setOptimisticValue(null);
+    }
+  }, [optimisticValue, resolvedValue]);
 
-// TabsTrigger exported from tabs-list;
-
+  return (
+    <TabsActiveValueContext.Provider value={indicatorValue}>
+      <TabsPrimitive.Root
+        ref={ref}
+        value={isControlled ? value : undefined}
+        defaultValue={isControlled ? undefined : defaultValue}
+        onValueChange={(next) => {
+          setOptimisticValue(next);
+          if (!isControlled) setUncontrolledValue(next);
+          hapticTabChange();
+          onValueChange?.(next);
+        }}
+        {...props}
+      />
+    </TabsActiveValueContext.Provider>
+  );
+});
+Tabs.displayName = TabsPrimitive.Root.displayName;
 
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
