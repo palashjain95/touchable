@@ -17,7 +17,7 @@ export const componentSnippets = {
   ButtonLink,
   ButtonNeutralIconLink,
   ButtonIconLinkLabeled,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 
 <Button size="default" fullWidth={false}>Save</Button>
 <ButtonNeutral size="compact" fullWidth={false}>Cancel</ButtonNeutral>
@@ -33,7 +33,7 @@ export const componentSnippets = {
       "Use Touchable Button for the main action; ButtonNeutral secondary; ButtonDestructive for delete; ButtonInverse on --surface-inverse; ButtonLink for text links; ButtonIconLinkLabeled for icon+label links; ButtonDisc for colour picker. iOS haptics are automatic; configureHaptics({ enabled: false }) to disable globally.",
   },
   searchField: {
-    code: `import { SearchField } from "@palashjain/touchable";
+    code: `import { SearchField } from "@palashjain95/touchable";
 
 <SearchField variant="pill" placeholder="Search projects" />
 <SearchField variant="field" placeholder="Search…" className="w-full" />
@@ -43,7 +43,7 @@ export const componentSnippets = {
       "Add a Touchable SearchField: variant pill in toolbars, variant field for full-width search rows.",
   },
   inputField: {
-    code: `import { InputField } from "@palashjain/touchable";
+    code: `import { InputField } from "@palashjain95/touchable";
 
 <InputField name="displayName" placeholder="My Project" defaultValue="Notey.app" />
 <InputField size="default" type="date" name="date" />
@@ -60,7 +60,7 @@ export const componentSnippets = {
   ComboboxValue,
   ComboboxContent,
   ComboboxItem,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 
 <Combobox defaultValue="welcome">
   <ComboboxTrigger variant="field" aria-label="Event type">
@@ -83,7 +83,7 @@ export const componentSnippets = {
   DropdownValue,
   DropdownContent,
   DropdownItem,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 
 <Dropdown defaultValue="mine">
   <DropdownTrigger variant="pill" aria-label="Filter projects">
@@ -110,7 +110,7 @@ export const componentSnippets = {
   ComboboxValue,
   ComboboxContent,
   ComboboxItem,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 
 <Card size="rectangle" className="p-5 md:p-6">
   <form className="space-y-4" onSubmit={…}>
@@ -129,7 +129,7 @@ export const componentSnippets = {
       "Put this form in a Touchable Card size rectangle: native inputs for text/date, field Dropdown for selects, Button submit + ButtonNeutral cancel.",
   },
   card: {
-    code: `import { Card } from "@palashjain/touchable";
+    code: `import { Card } from "@palashjain95/touchable";
 
 <Card size="rectangle" urgency="warning">…panel…</Card>
 <Card size="compact" interactive urgency="success">…tappable row…</Card>
@@ -143,7 +143,7 @@ export const componentSnippets = {
       "Use Touchable Card: size rectangle for panels, compact+interactive for pressable rows, portrait/tray for tiles; add urgency only when status matters.",
   },
   pill: {
-    code: `import { PillNeutral, PillAccent } from "@palashjain/touchable";
+    code: `import { PillNeutral, PillAccent } from "@palashjain95/touchable";
 
 <PillNeutral interactive role="button">Filter</PillNeutral>
 <PillAccent style={{ "--bg-accent": "var(--primary)" }}>Selected</PillAccent>
@@ -153,7 +153,7 @@ export const componentSnippets = {
       "Use Touchable PillNeutral for filters/tags; PillAccent with --bg-accent var(--primary) for the selected chip.",
   },
   tabs: {
-    code: `import { Tabs, TabsList, TabsTrigger, TabsContent } from "@palashjain/touchable";
+    code: `import { Tabs, TabsList, TabsTrigger, TabsContent } from "@palashjain95/touchable";
 
 <Tabs defaultValue="overview">
   <TabsList>
@@ -167,7 +167,7 @@ export const componentSnippets = {
       "Add Touchable Tabs for this screen: TabsList + TabsTrigger labels + TabsContent panels per section.",
   },
   icon: {
-    code: `import { Icon } from "@palashjain/touchable";
+    code: `import { Icon } from "@palashjain95/touchable";
 import { HomeIcon } from "@heroicons/react/24/outline";
 
 <Icon as={HomeIcon} size="md" />

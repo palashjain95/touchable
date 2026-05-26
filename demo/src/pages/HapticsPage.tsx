@@ -1,6 +1,6 @@
 import { Section, CodeBlock, CopyButton } from "../components/docs/DocsPrimitives";
 
-const CONFIG_SNIPPET = `import { configureHaptics, HapticsProvider } from "@palashjain/touchable";
+const CONFIG_SNIPPET = `import { configureHaptics, HapticsProvider } from "@palashjain95/touchable";
 
 // One line: disable everywhere
 configureHaptics({ enabled: false });
@@ -15,7 +15,7 @@ const CAPACITOR_SNIPPET = `npm install @capacitor/core @capacitor/haptics
 # iOS native build — test on a physical device
 npx cap sync ios`;
 
-const NOTIFICATION_SNIPPET = `import { hapticNotification } from "@palashjain/touchable";
+const NOTIFICATION_SNIPPET = `import { hapticNotification } from "@palashjain95/touchable";
 
 await savePiece(data);
 hapticNotification("success");

@@ -5,13 +5,13 @@ alwaysApply: true
 
 # Touchable
 
-This project uses `@palashjain/touchable` for product UI.
+This project uses `@palashjain95/touchable` for product UI.
 
 ## Setup
 
-- Import `@palashjain/touchable/styles.css` once in app entry (`main.tsx`)
-- Import components from `@palashjain/touchable`
-- Tailwind v4: `@source "../node_modules/@palashjain/touchable/dist/**/*.js"`
+- Import `@palashjain95/touchable/styles.css` once in app entry (`main.tsx`)
+- Import components from `@palashjain95/touchable`
+- Tailwind v4: `@source "../node_modules/@palashjain95/touchable/dist/**/*.js"`
 
 ## Components
 
@@ -44,6 +44,6 @@ Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles f
 
 ## Reference
 
-Read `node_modules/@palashjain/touchable/docs/DESIGN.md` for tokens, variants, and accessibility.
-Read `node_modules/@palashjain/touchable/docs/INTEGRATION.md` for full setup.
-Read `node_modules/@palashjain/touchable/docs/ios-haptics.md` for haptic mapping and rules.
+Read `node_modules/@palashjain95/touchable/docs/DESIGN.md` for tokens, variants, and accessibility.
+Read `node_modules/@palashjain95/touchable/docs/INTEGRATION.md` for full setup.
+Read `node_modules/@palashjain95/touchable/docs/ios-haptics.md` for haptic mapping and rules.

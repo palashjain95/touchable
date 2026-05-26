@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import { ButtonNeutralIcon, ButtonNeutralIconLink } from "@palashjain/touchable";
+import { ButtonNeutralIcon, ButtonNeutralIconLink } from "@palashjain95/touchable";
 
 const GITHUB_REPO = "https://github.com/palashjain95/touchable";
 

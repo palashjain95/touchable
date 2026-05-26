@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { ClipboardDocumentIcon, CheckIcon } from "@heroicons/react/24/outline";
-import { ButtonNeutral } from "@palashjain/touchable";
+import { ButtonNeutral } from "@palashjain95/touchable";
 
 export function Preview({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (

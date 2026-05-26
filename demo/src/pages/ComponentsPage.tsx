@@ -30,7 +30,7 @@ import {
   ComboboxValue,
   Icon,
   pressableDivProps,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 import { PlusIcon, HomeIcon, MicrophoneIcon, BookOpenIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 import { ComponentSection, Preview, PreviewGrid } from "../components/docs/DocsPrimitives";

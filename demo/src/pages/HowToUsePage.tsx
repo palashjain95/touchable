@@ -8,13 +8,13 @@ alwaysApply: true
 
 # Touchable
 
-This project uses \`@palashjain/touchable\` for product UI.
+This project uses \`@palashjain95/touchable\` for product UI.
 
 ## Setup
 
-- Import \`@palashjain/touchable/styles.css\` once in app entry (\`main.tsx\`)
-- Import components from \`@palashjain/touchable\`
-- Tailwind v4: \`@source "../node_modules/@palashjain/touchable/dist/**/*.js"\`
+- Import \`@palashjain95/touchable/styles.css\` once in app entry (\`main.tsx\`)
+- Import components from \`@palashjain95/touchable\`
+- Tailwind v4: \`@source "../node_modules/@palashjain95/touchable/dist/**/*.js"\`
 
 ## Components
 
@@ -45,13 +45,13 @@ Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles f
 
 ## Reference
 
-Read \`node_modules/@palashjain/touchable/docs/DESIGN.md\` for tokens, variants, and accessibility.
-Read \`node_modules/@palashjain/touchable/docs/ios-haptics.md\` for haptic mapping and rules.`;
+Read \`node_modules/@palashjain95/touchable/docs/DESIGN.md\` for tokens, variants, and accessibility.
+Read \`node_modules/@palashjain95/touchable/docs/ios-haptics.md\` for haptic mapping and rules.`;
 
-const INSTALL_SNIPPET = `npm install @palashjain/touchable
+const INSTALL_SNIPPET = `npm install @palashjain95/touchable
 
 // main.tsx
-import "@palashjain/touchable/styles.css";
+import "@palashjain95/touchable/styles.css";
 
 import {
   Button,
@@ -61,39 +61,39 @@ import {
   Tabs,
   TabsList,
   TabsTrigger,
-} from "@palashjain/touchable";`;
+} from "@palashjain95/touchable";`;
 
 const TAILWIND_SNIPPET = `@import "tailwindcss";
-@source "../node_modules/@palashjain/touchable/dist/**/*.js";`;
+@source "../node_modules/@palashjain95/touchable/dist/**/*.js";`;
 
-const CURSOR_SCREEN_PROMPT = `Build this screen using @palashjain/touchable components only.
+const CURSOR_SCREEN_PROMPT = `Build this screen using @palashjain95/touchable components only.
 Follow docs/DESIGN.md: 44px tap targets, accessibility (labels, aria-label on icon-only controls).
 Import styles.css in main.tsx.
 One primary Button per screen. Forms: InputField + label, Combobox variant field for selects.
 iOS haptics are automatic on native builds; use configureHaptics({ enabled: false }) to disable globally.`;
 
-const LOVABLE_PROMPT = `This project uses Touchable (@palashjain/touchable) for UI.
+const LOVABLE_PROMPT = `This project uses Touchable (@palashjain95/touchable) for UI.
 Components: Button, ButtonNeutral, Card, InputField, SearchField, Combobox/Dropdown, Pill, Tabs, Icon.
 Principles: touch-first (h-11 buttons), crisp 1px rims, clear hierarchy, accessible control names.
 iOS haptics are built into pressable components; disable with configureHaptics({ enabled: false }).
-Always import from @palashjain/touchable: do not generate custom button/card/input styles.
+Always import from @palashjain95/touchable: do not generate custom button/card/input styles.
 Follow docs/DESIGN.md for tokens, variants, and accessibility.`;
 
-const CLAUDE_KNOWLEDGE_RULE = `UI stack: React + Tailwind v4 + @palashjain/touchable.
+const CLAUDE_KNOWLEDGE_RULE = `UI stack: React + Tailwind v4 + @palashjain95/touchable.
 Use Touchable components for all product UI. Import styles.css at app entry.
 Follow Touchable design principles: touch-first, crisp edges, clear hierarchy, accessible labels.
 Main action = Button. Surfaces = Card. Forms = InputField + Combobox. Filters = Pill. Segments = Tabs.
 iOS haptics are built in on native iOS/Capacitor; configureHaptics({ enabled: false }) disables globally.
 Do not invent alternate button/card/input styling.`;
 
-const CLAUDE_TASK_PROMPT = `Implement [feature] using @palashjain/touchable. Reference docs/DESIGN.md for variants and accessibility.
+const CLAUDE_TASK_PROMPT = `Implement [feature] using @palashjain95/touchable. Reference docs/DESIGN.md for variants and accessibility.
 Use InputField with <label htmlFor>, Combobox for selects, ButtonNeutral for secondary actions.
 Interactive Card rows: onClick, aria-label, keyboard (built-in when onClick is set).`;
 
 const AGENTS_SNIPPET = `## UI
 
-Use \`@palashjain/touchable\` for all product UI.
-Read \`node_modules/@palashjain/touchable/docs/DESIGN.md\` (or \`../touchable/docs/DESIGN.md\` if using file:).
+Use \`@palashjain95/touchable\` for all product UI.
+Read \`node_modules/@palashjain95/touchable/docs/DESIGN.md\` (or \`../touchable/docs/DESIGN.md\` if using file:).
 Do not use raw shadcn Button for product screens: use Touchable Button variants.`;
 
 function CopyActions({ children }: { children: ReactNode }) {

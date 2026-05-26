@@ -9,7 +9,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@palashjain/touchable";
+} from "@palashjain95/touchable";
 import { LOVABLE_LOGO } from "../lib/brandLogos";
 
 const PRINCIPLES = [

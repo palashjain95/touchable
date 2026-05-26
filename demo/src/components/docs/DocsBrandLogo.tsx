@@ -1,4 +1,4 @@
-import { cn } from "@palashjain/touchable";
+import { cn } from "@palashjain95/touchable";
 import { publicAsset } from "../../lib/publicAsset";
 
 export function DocsBrandLogo({

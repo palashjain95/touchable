@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
-import { ButtonDisc, ButtonNeutralIconLink } from "@palashjain/touchable";
+import { ButtonDisc, ButtonNeutralIconLink } from "@palashjain95/touchable";
 import {
   applyPrimaryFromHex,
   clearAccentOverride,

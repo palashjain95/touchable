@@ -5,7 +5,7 @@
 @source "../src/**/*.{ts,tsx}";
 /* Production build: scan compiled bundle (file:.. → dist) */
 @source "../../dist/**/*.js";
-@source "../node_modules/@palashjain/touchable/dist/**/*.js";
+@source "../node_modules/@palashjain95/touchable/dist/**/*.js";
 
 @import "../../src/styles/tokens.css";
 

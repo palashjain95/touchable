@@ -7,7 +7,7 @@ import {
   Squares2X2Icon,
   SwatchIcon,
 } from "@heroicons/react/24/outline";
-import { cn } from "@palashjain/touchable";
+import { cn } from "@palashjain95/touchable";
 import { DocsAppearanceControls } from "./DocsAppearanceControls";
 import { DocsBrandLogo } from "./DocsBrandLogo";
 

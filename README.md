@@ -9,7 +9,7 @@ Touch-first React design system: crisp surfaces, strong hierarchy, and component
 
 | | |
 |---|---|
-| **Package** | `@palashjain/touchable` |
+| **Package** | `@palashjain95/touchable` |
 
 ---
 
@@ -39,7 +39,7 @@ Touchable is my take on that balance: still beautiful, still modern: with **defi
 ## Install
 
 ```bash
-npm install @palashjain/touchable
+npm install @palashjain95/touchable
 ```
 
 ### Requirements

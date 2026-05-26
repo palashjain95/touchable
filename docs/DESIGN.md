@@ -121,7 +121,7 @@ The rim and interaction layers are the identity. Depth is used sparingly.
 
 ## Tokens
 
-Import `@palashjain/touchable/styles.css` in your app.
+Import `@palashjain95/touchable/styles.css` in your app.
 
 ### Color: semantic text
 

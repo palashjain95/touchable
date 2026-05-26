@@ -1,9 +1,12 @@
 {
-  "name": "@palashjain/touchable",
+  "name": "@palashjain95/touchable",
   "version": "0.1.0",
   "description": "Touch-first React design system. Beautiful UI that reads.",
   "author": "Palash Jain",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "engines": {
     "node": ">=22.0.0"

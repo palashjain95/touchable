@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => ({
     alias:
       command === "serve"
         ? {
-            "@palashjain/touchable": path.resolve(__dirname, "../src/index.ts"),
+            "@palashjain95/touchable": path.resolve(__dirname, "../src/index.ts"),
           }
         : {},
   },

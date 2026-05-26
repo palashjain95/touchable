@@ -13,7 +13,7 @@ Apple Haptics let you feel the UI when you touch the screen. Touchable builds th
 Haptics are **on by default** on native iOS. Disable everywhere with one call:
 
 ```ts
-import { configureHaptics } from "@palashjain/touchable";
+import { configureHaptics } from "@palashjain95/touchable";
 
 configureHaptics({ enabled: false });
 ```
@@ -21,7 +21,7 @@ configureHaptics({ enabled: false });
 Or wrap the app (e.g. from user settings):
 
 ```tsx
-import { HapticsProvider } from "@palashjain/touchable";
+import { HapticsProvider } from "@palashjain95/touchable";
 
 <HapticsProvider enabled={userPrefs.haptics}>
   <App />
