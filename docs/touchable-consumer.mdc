@@ -1,0 +1,47 @@
+---
+description: Use Touchable design system for all product UI
+alwaysApply: true
+---
+
+# Touchable
+
+This project uses `@palashjain/touchable` for product UI.
+
+## Setup
+
+- Import `@palashjain/touchable/styles.css` once in app entry (`main.tsx`)
+- Import components from `@palashjain/touchable`
+- Tailwind v4: `@source "../node_modules/@palashjain/touchable/dist/**/*.js"`
+
+## Components
+
+| Need | Use |
+|------|-----|
+| Main action | `Button` |
+| Secondary | `ButtonNeutral` |
+| Low emphasis | `ButtonTertiary` |
+| Text / date field | `InputField` with `<label htmlFor>` |
+| Search | `SearchField` (`variant="pill"` \| `"field"`) |
+| Fixed select | `Combobox` or `Dropdown` (`variant="field"` in forms) |
+| Surface | `Card` |
+| Tappable row | `Card` `interactive` + `onClick` + `aria-label` |
+| Tag / filter | `Pill` |
+| Segments | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` |
+| Icon-only control | `ButtonIcon` with `aria-label` |
+| Decorative icon | `Icon` with `size="md"` (`aria-hidden` on SVG) |
+
+Do **not** use shadcn Button, custom CSS buttons, or one-off card/input styles for product UI.
+
+## Principles
+
+- Default tap target: **h-11 (44px)**. Compact **h-9** only when space is tight
+- One primary `Button` per screen
+- Text hierarchy: `--fg-primary`, `--fg-secondary`, `--fg-tertiary`
+- Crisp **1px rims**: surfaces have defined edges
+- Press feedback on `:active`, not hover-only affordances
+- **Accessible names** on icon-only buttons and unlabeled triggers
+
+## Reference
+
+Read `node_modules/@palashjain/touchable/DESIGN.md` for tokens, variants, and accessibility.
+Read `node_modules/@palashjain/touchable/INTEGRATION.md` for full setup.

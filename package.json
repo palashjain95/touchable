@@ -1,0 +1,86 @@
+{
+  "name": "@palashjain/touchable",
+  "version": "0.1.0",
+  "description": "Touch-first React design system — beautiful UI that reads.",
+  "author": "Palash Jain",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "workspaces": [
+    "demo"
+  ],
+  "files": [
+    "dist",
+    "DESIGN.md",
+    "INTEGRATION.md",
+    "docs/touchable-consumer.mdc"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev:demo": "npm run dev -w touchable-demo",
+    "build:demo": "npm run build && npm run build -w touchable-demo",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ci": "npm run lint && npm run typecheck && npm run test && npm run build && npm run build:demo"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@heroicons/react": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-tabs": "^1.1.12",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.16.5",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react-swc": "^3.11.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^15.15.0",
+    "jsdom": "^26.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "touch-first",
+    "tailwind",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/palashjain95/touchable"
+  }
+}
