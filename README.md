@@ -1,7 +1,8 @@
 # Touchable
 
-[![Website](https://img.shields.io/badge/Website-jpalash.com-111?style=flat)](https://www.jpalash.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Palash_Jain-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palash-jain-2565b612a/)
+[![Tests](https://github.com/palashjain95/touchable/actions/workflows/tests.yml/badge.svg)](https://github.com/palashjain95/touchable/actions/workflows/tests.yml)
+[![Demo](https://img.shields.io/badge/Demo-live-111?style=flat)](https://palashjain95.github.io/touchable/)
+[![Author](https://img.shields.io/badge/Website-jpalash.com-111?style=flat)](https://www.jpalash.com/)
 
 **Beautiful UI that reads.**
 
@@ -24,19 +25,7 @@ Touchable is a small component library built around that idea. Interfaces that f
 
 I want the same bar I see in beautifully crafted products, where the design language holds up in buttons, tabs, and cards, not just hero screens. Touchable is my attempt to make that reusable.
 
-
-
----
-
-## Design principles
-
-| Principle | Summary |
-|-----------|---------|
-| Beautiful and readable | Visual polish and legibility reinforce each other, not compete. |
-| Touch first | 44px targets, obvious press states, built for thumbs. iOS haptics in components ([`docs/ios-haptics.md`](./docs/ios-haptics.md)). |
-| Crisp and simple | 1px rims, defined surfaces, few variants, strong defaults. |
-| Clear hierarchy | Primary, secondary, tertiary text. One primary action per screen. |
-| Modern and bright | Light-first palettes, confident accent, legible dark mode. |
+**Design reference:** [DESIGN.md](./DESIGN.md).
 
 ---
 
@@ -60,40 +49,6 @@ npm install @palashjain/touchable
 
 - React 18+
 - Tailwind CSS v4 (consumer app must scan library classes or import prebuilt CSS)
-
----
-
-## Components (v0.1)
-
-Browse in the [live demo](https://palashjain95.github.io/touchable/). API reference: [DESIGN.md](./DESIGN.md).
-
----
-
-## Use with AI tools
-
-Touchable ships docs for humans and AI assistants:
-
-| Tool | How to use |
-|------|------------|
-| **Cursor** | Copy [`docs/touchable-consumer.mdc`](./docs/touchable-consumer.mdc) into your project's `.cursor/rules/` |
-| **Lovable** | Add dependency + paste the starter prompt from [INTEGRATION.md](./INTEGRATION.md) |
-| **Claude** | Add `DESIGN.md` and `INTEGRATION.md` to Project Knowledge |
-
-Full copy-paste prompts and setup steps: demo **How to use** page or **[INTEGRATION.md](./INTEGRATION.md)**
-
----
-
-## Development
-
-```bash
-git clone https://github.com/palashjain95/touchable.git
-cd touchable
-npm install
-npm run dev:demo   # gallery at http://localhost:5173
-npm run ci         # lint, typecheck, test, build
-```
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for the PR checklist.
 
 ---
 
