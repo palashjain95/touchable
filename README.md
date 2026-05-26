@@ -10,7 +10,7 @@ Touch-first React design system: crisp surfaces, strong hierarchy, and component
 
 | | |
 |---|---|
-| **Package** | `@palashjain/touchable` (in development) |
+| **Package** | `@palashjain/touchable` |
 
 ---
 
