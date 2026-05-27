@@ -1,8 +1,8 @@
 # Touchable
 
 [![CI](https://github.com/palashjain95/touchable/actions/workflows/ci.yml/badge.svg)](https://github.com/palashjain95/touchable/actions/workflows/ci.yml)
-[![npm package](https://img.shields.io/npm/v/@palashjain95/touchable?logo=npm&label=@palashjain95%2Ftouchable)](https://www.npmjs.com/package/@palashjain95/touchable)
 [![Demo](https://img.shields.io/badge/Demo-live-111?style=flat)](https://palashjain95.github.io/touchable/)
+[![npm](https://img.shields.io/npm/v/@palashjain95/touchable?logo=npm&label=@palashjain95%2Ftouchable)](https://www.npmjs.com/package/@palashjain95/touchable)
 
 **Beautiful UI that reads.**
 
@@ -38,8 +38,6 @@ Touchable is my take on that balance: still beautiful, still modern: with **defi
 ---
 
 ## Install
-
-[![npm package](https://img.shields.io/npm/v/@palashjain95/touchable?logo=npm)](https://www.npmjs.com/package/@palashjain95/touchable)
 
 ```bash
 npm install @palashjain95/touchable
