@@ -63,18 +63,18 @@ MIT
 **Notey** is a collaborative workspace for musicians.
 
 <p align="center">
-  <img src="previews/notey/IMG_2124.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2125.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2126.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/1.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/2.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/3.PNG" alt="Notey app screenshot" width="240" />
 </p>
 <p align="center">
-  <img src="previews/notey/IMG_2127.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2128.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2129.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/4.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/5.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/6.PNG" alt="Notey app screenshot" width="240" />
 </p>
 <p align="center">
-  <img src="previews/notey/IMG_2131.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2132.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2133.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/IMG_2134.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/7.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/8.PNG" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/9.png" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/10.png" alt="Notey app screenshot" width="240" />
 </p>
