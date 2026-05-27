@@ -149,7 +149,7 @@ const DropdownItem = React.forwardRef<
     ref={ref}
     className={cn(
       "relative flex w-full cursor-default select-none items-center rounded-lg py-2 pl-8 pr-2 text-sm outline-none",
-      "text-[var(--fg-primary)] data-[highlighted]:bg-[hsl(var(--muted))] data-[highlighted]:text-[var(--fg-primary)]",
+      "text-[var(--fg-primary)] data-[highlighted]:bg-[hsl(var(--muted-hover))] data-[highlighted]:text-[var(--fg-primary)]",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}

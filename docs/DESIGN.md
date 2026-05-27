@@ -138,7 +138,7 @@ Import `@palashjain95/touchable/styles.css` in your app.
 | `--background` | Page background |
 | `--foreground` | Default text |
 | `--primary` | Brand accent |
-| `--bg-translucent` | Neutral component shells |
+| `--bg-translucent` | Glass shells (Card, neutral Button, Pill, search field) — `hsl(var(--card) / 0.6)` light, `0.5` dark |
 | `--bg-inverse` | Inverse CTA fill |
 
 ### Color: semantic status

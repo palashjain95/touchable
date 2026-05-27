@@ -512,7 +512,7 @@
     --bg-accent: var(--primary);
     --bg-accent-hover: var(--accent-hover);
     --bg-accent-translucent: color-mix(in lab, var(--primary) 24%, transparent);
-    --bg-translucent: #77777133;
+    --bg-translucent: hsl(var(--card) / 0.5);
     --bg-muted: #77777114;
     --bg-inverse: #fffffff5;
     --bg-scrim: #000c;
