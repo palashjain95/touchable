@@ -62,13 +62,13 @@ export function ComponentsPage() {
           Touch-first React components: crisp, readable, and intentionally designed.
         </p>
         <div className="flex flex-wrap items-center gap-4 pt-1">
-          <Button fullWidth={false} size="compact" onClick={() => navigate("/docs/how-to-use")}>
+          <Button fullWidth={false} size="compact" onClick={() => navigate("/how-to-use")}>
             Get started
           </Button>
-          <ButtonOutline fullWidth={false} size="compact" onClick={() => navigate("/docs/tokens")}>
+          <ButtonOutline fullWidth={false} size="compact" onClick={() => navigate("/tokens")}>
             Tokens
           </ButtonOutline>
-          <ButtonNeutral fullWidth={false} size="compact" onClick={() => navigate("/docs/haptics")}>
+          <ButtonNeutral fullWidth={false} size="compact" onClick={() => navigate("/haptics")}>
             Haptics
           </ButtonNeutral>
         </div>
@@ -103,9 +103,9 @@ export function ComponentsPage() {
           <div>
             <p className="mb-2 text-xs font-medium text-[var(--fg-tertiary)]">Link</p>
             <div className="flex flex-wrap items-center gap-4">
-              <ButtonLink href="/docs/tokens">View tokens</ButtonLink>
+              <ButtonLink href="/tokens">View tokens</ButtonLink>
               <ButtonIconLinkLabeled
-                href="/docs/how-to-use"
+                href="/how-to-use"
                 label="How to use"
                 icon={<BookOpenIcon data-default-size aria-hidden />}
               />

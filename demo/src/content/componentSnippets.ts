@@ -23,7 +23,7 @@ export const componentSnippets = {
 <ButtonNeutral size="compact" fullWidth={false}>Cancel</ButtonNeutral>
 <ButtonDestructive fullWidth>Delete</ButtonDestructive>
 <ButtonInverse size="compact" fullWidth={false}>Get started</ButtonInverse>
-<ButtonLink href="/docs/tokens">View tokens</ButtonLink>
+<ButtonLink href="/tokens">View tokens</ButtonLink>
 <ButtonIconLinkLabeled href="/docs" label="How to use" icon={<Icon />} />
 
 // size: "default" | "compact"  (44px / 36px)

@@ -12,11 +12,11 @@ import { DocsAppearanceControls } from "./DocsAppearanceControls";
 import { DocsBrandLogo } from "./DocsBrandLogo";
 
 const NAV = [
-  { to: "/docs/principles", label: "Principles", end: false, icon: HeartIcon },
-  { to: "/", label: "Components", end: true, icon: Squares2X2Icon },
-  { to: "/docs/tokens", label: "Tokens", end: false, icon: SwatchIcon },
-  { to: "/docs/haptics", label: "Haptics", end: false, icon: SignalIcon },
-  { to: "/docs/how-to-use", label: "How to use", end: false, icon: BookOpenIcon },
+  { to: "/", label: "Principles", end: true, icon: HeartIcon },
+  { to: "/components", label: "Components", end: true, icon: Squares2X2Icon },
+  { to: "/tokens", label: "Tokens", end: false, icon: SwatchIcon },
+  { to: "/haptics", label: "Haptics", end: false, icon: SignalIcon },
+  { to: "/how-to-use", label: "How to use", end: false, icon: BookOpenIcon },
 ] as const;
 
 function navItemClass(isActive: boolean) {
@@ -74,7 +74,7 @@ export function DocsShell({ children }: { children: ReactNode }) {
 
           <footer className="mt-auto pt-4">
             <Link
-              to="/docs/designer"
+              to="/designer"
               className="flex items-center gap-3 rounded-lg p-1 transition-colors hover:bg-[hsl(var(--muted-hover))]"
             >
               <DocsBrandLogo className="h-8 w-8 shrink-0" alt="" />
@@ -125,7 +125,7 @@ export function DocsShell({ children }: { children: ReactNode }) {
         </div>
         <footer className="border-t border-[hsl(var(--border-subtle))] px-4 py-8 lg:hidden">
           <Link
-            to="/docs/designer"
+            to="/designer"
             className="mx-auto flex max-w-3xl items-center gap-3 rounded-lg transition-colors hover:bg-[hsl(var(--muted-hover))] active:bg-[hsl(var(--muted-active))]"
           >
             <DocsBrandLogo className="h-8 w-8 shrink-0" alt="" />
