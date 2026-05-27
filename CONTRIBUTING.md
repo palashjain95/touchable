@@ -70,6 +70,24 @@ Breaking changes: `feat!:` or `BREAKING CHANGE:` in the body. See [.cursor/rules
 
 Say **commit** in Cursor to auto-draft and create a commit (skill: [.cursor/skills/commit/SKILL.md](./.cursor/skills/commit/SKILL.md)). Say **prepare commit message** to draft only.
 
+### Demo app commits
+
+Any change under `demo/` (gallery, routes, shell, `index.html`, `public/`, demo pages) uses the **`demo:`** prefix:
+
+```
+demo: <imperative summary ≤72 chars>
+
+<optional body — why, not a file list>
+```
+
+Examples:
+
+```
+demo: add social preview image for OG and Twitter
+demo: drop /docs prefix and default to principles
+demo: update site meta and manifest descriptions
+```
+
 ---
 
 ## PR checklist
