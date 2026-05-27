@@ -6,7 +6,7 @@ import {
   DropdownValue,
   DropdownContent,
   DropdownItem,
-} from "../components/dropdown";
+} from "./dropdown";
 
 describe("Dropdown", () => {
   it("renders trigger with selected value", () => {

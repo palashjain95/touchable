@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { Button } from "../components/button";
 import { Card } from "../components/card";
-import { pressableDivProps } from "../lib/a11y";
+import { pressableDivProps } from "./a11y";
 
 describe("accessibility", () => {
   it("buttons expose focus-visible ring utilities", () => {

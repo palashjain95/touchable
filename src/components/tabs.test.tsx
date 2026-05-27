@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 
 describe("Tabs", () => {
   it("renders tabs with active trigger", () => {

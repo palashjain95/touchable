@@ -39,7 +39,7 @@ npm run ci
 2. Implement in `src/components/`
 3. Export from `src/index.ts`
 4. Add demo page in `demo/src/pages/`
-5. Add smoke test in `src/__tests__/`
+5. Add a colocated smoke test next to the component (e.g. `src/components/foo.test.tsx`)
 6. Update `docs/DESIGN.md` variants table
 7. Add entry to `CHANGELOG.md` under `[Unreleased]`
 
@@ -115,8 +115,10 @@ Keep PRs focused. Touchable v0.x is intentionally small: prefer extending existi
 Pushes to `main` run [.github/workflows/cd.yml](./.github/workflows/cd.yml):
 
 1. Lint, typecheck, test
-2. Build library + demo → deploy demo to GitHub Pages
-3. `npm publish` for the version in root `package.json`
+2. Build library + demo → deploy demo to GitHub Pages (every push)
+3. `npm publish` only when the push is **not** demo-only (any change outside `demo/` triggers publish; `workflow_dispatch` always publishes)
+
+Demo-only commits (e.g. gallery copy) update GitHub Pages without a new npm version.
 
 **npm publish (one-time setup):** npm no longer offers “bypass 2FA” on many accounts. Use [trusted publishing](https://docs.npmjs.com/trusted-publishers/) instead of `NPM_TOKEN`:
 

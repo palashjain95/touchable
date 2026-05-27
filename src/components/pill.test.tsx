@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import type { CSSProperties } from "react";
-import { PillNeutral, PillAccent } from "../components/pill";
+import { PillNeutral, PillAccent } from "./pill";
 
 describe("Pill", () => {
   it("renders neutral pill", () => {

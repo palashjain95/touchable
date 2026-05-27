@@ -4,7 +4,7 @@ import {
   getHapticsConfig,
   withHapticPress,
   hapticLightImpact,
-} from "../lib/haptics";
+} from "./haptics";
 
 describe("haptics", () => {
   beforeEach(() => {

@@ -30,13 +30,13 @@
   },
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "tsup",
+    "build": "tsup --config config/tsup.config.ts",
     "dev:demo": "npm run dev -w touchable-demo",
     "build:demo": "npm run build && npm run build -w touchable-demo",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "lint": "eslint -c config/eslint.config.js .",
+    "typecheck": "tsc --noEmit -p config/tsconfig.json",
+    "test": "vitest run --config config/vitest.config.ts",
+    "test:watch": "vitest --config config/vitest.config.ts",
     "ci": "npm run lint && npm run typecheck && npm run test && npm run build && npm run build:demo"
   },
   "peerDependencies": {

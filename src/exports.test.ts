@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import * as Touchable from "../index";
+import * as Touchable from "./index";
 
 const EXPORT_NAMES = [
   "cn",

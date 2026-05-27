@@ -16,6 +16,46 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect demo-only push
+        id: release
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+            echo "Manual run — will publish to npm."
+            exit 0
+          fi
+
+          before="${{ github.event.before }}"
+          if [ "$before" = "0000000000000000000000000000000000000000" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+            echo "No previous SHA — will publish to npm."
+            exit 0
+          fi
+
+          changed="$(git diff --name-only "$before" "${{ github.sha }}")"
+          if [ -z "$changed" ]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "No changed files — skipping npm publish."
+            exit 0
+          fi
+
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            case "$file" in
+              demo/*) ;;
+              *)
+                echo "publish=true" >> "$GITHUB_OUTPUT"
+                echo "Non-demo changes detected — will publish to npm."
+                exit 0
+                ;;
+            esac
+          done <<< "$changed"
+
+          echo "publish=false" >> "$GITHUB_OUTPUT"
+          echo "Demo-only changes — skipping npm publish."
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,6 +88,7 @@ jobs:
           publish_dir: ./demo/dist
 
       - name: Bump version if already on npm
+        if: steps.release.outputs.publish == 'true'
         run: |
           PKG="@palashjain95/touchable"
           while npm view "${PKG}@$(node -p "require('./package.json').version")" version >/dev/null 2>&1; do
@@ -57,6 +98,7 @@ jobs:
           echo "Publishing $(node -p "require('./package.json').version")"
 
       - name: Publish to npm
+        if: steps.release.outputs.publish == 'true'
         run: |
           npm install -g npm@11
           npm publish --access public
