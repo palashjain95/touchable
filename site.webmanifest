@@ -1,7 +1,7 @@
 {
   "name": "Touchable",
   "short_name": "Touchable",
-  "description": "React UI library built for thumbs: clear tap targets and press feedback, not hover-only desktop UI.",
+  "description": "React UI library built for thumbs: clear tap targets and press feedback.",
   "start_url": "./",
   "display": "browser",
   "background_color": "#f5f4f0",
