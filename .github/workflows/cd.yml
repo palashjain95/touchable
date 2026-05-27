@@ -47,6 +47,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./demo/dist
 
+      - name: Bump version if already on npm
+        run: |
+          PKG="@palashjain95/touchable"
+          while npm view "${PKG}@$(node -p "require('./package.json').version")" version >/dev/null 2>&1; do
+            echo "Version $(node -p "require('./package.json').version") already published; bumping patch"
+            npm version patch --no-git-tag-version
+          done
+          echo "Publishing $(node -p "require('./package.json').version")"
+
       - name: Publish to npm
         run: |
           npm install -g npm@11

@@ -126,7 +126,7 @@ Pushes to `main` run [.github/workflows/cd.yml](./.github/workflows/cd.yml):
 
 CI uses OIDC (`id-token: write`); no long-lived publish token in secrets.
 
-**Bump `version` in `package.json` before merging** when you want a new npm release — the registry does not allow overwriting an existing version.
+**npm versions:** the registry does not allow overwriting a published version. CD bumps the patch in `package.json` automatically when that version is already on npm (CI only; sync `package.json` on `main` when you can). Prefer bumping `version` yourself before merge when you intend a release.
 
 ---
 
