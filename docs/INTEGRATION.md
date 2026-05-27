@@ -122,7 +122,7 @@ Ensure Vite/Tailwind resolves the linked package: add `@source` to sibling `touc
 
 ### Step 1: Add dependency
 
-Add `@palashjain95/touchable` in Lovable project settings or `package.json`. Until npm publish, use a git dependency URL or paste components manually.
+Add `@palashjain95/touchable` in Lovable project settings or `package.json` (`0.1.x` — early development).
 
 ### Step 2: Import styles
 

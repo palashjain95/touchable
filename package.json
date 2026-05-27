@@ -29,6 +29,7 @@
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsup",
     "dev:demo": "npm run dev -w touchable-demo",
     "build:demo": "npm run build && npm run build -w touchable-demo",

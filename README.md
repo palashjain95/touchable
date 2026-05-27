@@ -1,6 +1,7 @@
 # Touchable
 
 [![CI](https://github.com/palashjain95/touchable/actions/workflows/ci.yml/badge.svg)](https://github.com/palashjain95/touchable/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@palashjain95/touchable?label=npm)](https://www.npmjs.com/package/@palashjain95/touchable)
 [![Demo](https://img.shields.io/badge/Demo-live-111?style=flat)](https://palashjain95.github.io/touchable/)
 
 **Beautiful UI that reads.**
@@ -9,7 +10,7 @@ Touch-first React design system: crisp surfaces, strong hierarchy, and component
 
 | | |
 |---|---|
-| **Package** | `@palashjain95/touchable` |
+| **Package** | [`@palashjain95/touchable`](https://www.npmjs.com/package/@palashjain95/touchable) `0.1.x` (early dev) |
 
 ---
 
