@@ -100,7 +100,15 @@ Pushes to `main` run [.github/workflows/cd.yml](./.github/workflows/cd.yml):
 2. Build library + demo → deploy demo to GitHub Pages
 3. `npm publish` for the version in root `package.json`
 
-Add an [npm automation token](https://www.npmjs.com/settings/~youruser/tokens) as repo secret **`NPM_TOKEN`** (publish access for `@palashjain95/touchable`). **Bump `version` in `package.json` before merging** when you want a new npm release — the registry does not allow overwriting an existing version.
+**npm publish (one-time setup):** npm no longer offers “bypass 2FA” on many accounts. Use [trusted publishing](https://docs.npmjs.com/trusted-publishers/) instead of `NPM_TOKEN`:
+
+1. [npmjs.com](https://www.npmjs.com/package/@palashjain95/touchable) → **Settings** → **Trusted publishing**
+2. **GitHub Actions** → repository `palashjain95/touchable`, workflow filename **`cd.yml`**
+3. Save, then re-run **CD** on GitHub
+
+CI uses OIDC (`id-token: write`); no long-lived publish token in secrets.
+
+**Bump `version` in `package.json` before merging** when you want a new npm release — the registry does not allow overwriting an existing version.
 
 ---
 
