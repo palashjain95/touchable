@@ -98,9 +98,9 @@ Pushes to `main` run [.github/workflows/cd.yml](./.github/workflows/cd.yml):
 
 1. Lint, typecheck, test
 2. Build library + demo → deploy demo to GitHub Pages
-3. `npm publish` for the version in root `package.json` (skips if that version is already on npm)
+3. `npm publish` for the version in root `package.json`
 
-Add an [npm automation token](https://www.npmjs.com/settings/~youruser/tokens) as repo secret **`NPM_TOKEN`** (publish access for `@palashjain95/touchable`). Bump `version` in `package.json` before merging when you want a new release.
+Add an [npm automation token](https://www.npmjs.com/settings/~youruser/tokens) as repo secret **`NPM_TOKEN`** (publish access for `@palashjain95/touchable`). **Bump `version` in `package.json` before merging** when you want a new npm release — the registry does not allow overwriting an existing version.
 
 ---
 

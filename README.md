@@ -8,10 +8,6 @@
 
 Touch-first React design system: crisp surfaces, strong hierarchy, and components built for thumbs (not just cursors). Buttons, cards, forms, tabs, tokens, and a Vite demo gallery.
 
-| | |
-|---|---|
-| **Package** | [`@palashjain95/touchable`](https://www.npmjs.com/package/@palashjain95/touchable) · `0.1.x` (early dev) |
-
 ---
 
 ## Why Touchable?

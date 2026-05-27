@@ -1,6 +1,6 @@
 {
   "name": "@palashjain95/touchable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Touch-first React design system. Beautiful UI that reads.",
   "author": "Palash Jain",
   "license": "MIT",
@@ -94,8 +94,12 @@
     "tailwind",
     "ui"
   ],
+  "homepage": "https://palashjain95.github.io/touchable/",
+  "bugs": {
+    "url": "https://github.com/palashjain95/touchable/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/palashjain95/touchable"
+    "url": "git+https://github.com/palashjain95/touchable.git"
   }
 }
