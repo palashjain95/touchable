@@ -73,8 +73,5 @@ MIT
   <img src="previews/notey/6.PNG" alt="Notey app screenshot" width="240" />
 </p>
 <p align="center">
-  <img src="previews/notey/7.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/8.PNG" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/9.png" alt="Notey app screenshot" width="240" />
-  <img src="previews/notey/10.png" alt="Notey app screenshot" width="240" />
+  <img src="previews/notey/ios_widget.png" alt="Notey iOS app widget" width="320" />
 </p>
