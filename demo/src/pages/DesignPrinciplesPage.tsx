@@ -178,11 +178,14 @@ function PrincipleCard({ lead, line }: { lead: string; line: string }) {
 export function DesignPrinciplesPage() {
   return (
     <div className="space-y-12">
-      <header className="mb-8 md:mb-12">
+      <header className="mb-8 space-y-4 md:mb-12">
         <h1 className="flex flex-wrap items-baseline gap-x-1.5 text-3xl font-semibold leading-tight text-[var(--fg-primary)] md:gap-y-0 md:text-5xl md:leading-none">
           <span>Build something</span>
           <span className="text-6xl font-bold text-[var(--primary)] md:text-5xl">Touchable</span>
         </h1>
+        <p className="max-w-xl text-sm leading-relaxed text-[var(--fg-secondary)]">
+          A React UI library built for thumbs.
+        </p>
       </header>
 
       <section className="space-y-4" aria-labelledby="principles-heading">
