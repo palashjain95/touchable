@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { SearchField } from "../components/search-field";
+import { SearchField } from "./search-field";
 
 describe("SearchField", () => {
   it("renders search input with icon", () => {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Button, ButtonNeutral, ButtonDisc, ButtonLink, ButtonIconLinkLabeled } from "../components/button";
+import { Button, ButtonNeutral, ButtonDisc, ButtonLink, ButtonIconLinkLabeled } from "./button";
 
 describe("Button", () => {
   it("renders primary button", () => {

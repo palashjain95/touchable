@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { InputField, inputFieldClass } from "../components/input-field";
+import { InputField, inputFieldClass } from "./input-field";
 
 describe("InputField", () => {
   it("renders with input-field shell class", () => {

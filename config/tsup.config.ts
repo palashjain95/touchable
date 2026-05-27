@@ -3,6 +3,7 @@ import { copyFileSync, mkdirSync } from "node:fs";
 
 export default defineConfig({
   entry: ["src/index.ts"],
+  tsconfig: "config/tsconfig.json",
   format: ["esm"],
   dts: true,
   sourcemap: true,
