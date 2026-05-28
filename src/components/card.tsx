@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { ReactNode } from 'react';
 
 import { pressableDivProps } from '../lib/a11y';
-import { withHapticPress, type HapticPressKind } from '../lib/haptics';
+import { useHapticsEnabled, withHapticPress, type HapticPressKind } from '../lib/haptics';
 import { cn } from '../lib/utils';
 
 const CARD_NEUTRAL_TOKEN_STYLE = {
@@ -234,10 +234,11 @@ export function Card({
   onKeyDown,
   ...props
 }: CardProps) {
+  const hapticsEnabled = useHapticsEnabled();
   const fx = getCardFxStyles(urgency);
   const shellProps =
     interactive && onClick
-      ? withHapticPress({ ...props, onClick, onKeyDown, haptic }, 'light')
+      ? withHapticPress({ ...props, onClick, onKeyDown, haptic, hapticsEnabled }, 'light')
       : { ...props, onClick, onKeyDown };
   const pressable =
     interactive && shellProps.onClick

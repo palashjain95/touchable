@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 
-import { configureHaptics } from "../lib/haptics";
+import { configureHaptics, HapticsEnabledContext } from "../lib/haptics";
 
 export type HapticsProviderProps = {
   /** When false, all Touchable haptics are silent. Default: true. */
@@ -14,5 +14,9 @@ export function HapticsProvider({ enabled = true, children }: HapticsProviderPro
     configureHaptics({ enabled });
   }, [enabled]);
 
-  return children;
+  return (
+    <HapticsEnabledContext.Provider value={enabled}>
+      {children}
+    </HapticsEnabledContext.Provider>
+  );
 }

@@ -220,6 +220,16 @@ import { HapticsProvider } from "@palashjain95/touchable";
 </HapticsProvider>
 ```
 
+Or disable haptics for a specific subtree:
+
+```tsx
+import { HapticsScope } from "@palashjain95/touchable";
+
+<HapticsScope enabled={false}>
+  <SilentSection />
+</HapticsScope>
+```
+
 ### Outcomes (save / delete)
 
 ```ts

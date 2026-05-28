@@ -8,6 +8,7 @@ const EXPORT_NAMES = [
   "hapticNotification",
   "withHapticPress",
   "HapticsProvider",
+  "HapticsScope",
   "Button",
   "ButtonOutline",
   "ButtonDestructive",

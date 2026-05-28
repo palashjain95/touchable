@@ -5,6 +5,7 @@
  * @see docs/ios-haptics.md
  */
 import { useCallback, useRef } from "react";
+import { createContext, useContext } from "react";
 import type {
   KeyboardEvent,
   KeyboardEventHandler,
@@ -21,6 +22,20 @@ export type HapticsConfig = {
   /** Master switch. Default: true (still iOS-native only at runtime). */
   enabled: boolean;
 };
+
+/**
+ * React tree-level haptics gate (scoped override).
+ *
+ * - `undefined`: no opinion (inherits)
+ * - `true/false`: explicit gate for subtree
+ */
+export const HapticsEnabledContext = createContext<boolean | undefined>(undefined);
+
+/** Returns the effective haptics enabled value for the current React subtree. */
+export function useHapticsEnabled(): boolean {
+  const scoped = useContext(HapticsEnabledContext);
+  return scoped ?? true;
+}
 
 const PRESS_HAPTIC_DEDUPE_MS = 80;
 
@@ -129,6 +144,11 @@ type PressableProps = {
   disabled?: boolean;
   "aria-disabled"?: boolean | "true" | "false";
   haptic?: HapticPressKind;
+  /**
+   * Optional per-subtree gate for React components. Prefer using `HapticsProvider`
+   * or `HapticsScope` instead of passing this prop manually.
+   */
+  hapticsEnabled?: boolean;
 };
 
 /**
@@ -138,25 +158,27 @@ type PressableProps = {
 export function withHapticPress<P extends PressableProps>(
   props: P,
   defaultKind: HapticPressKind = "light",
-): Omit<P, "haptic"> {
+): Omit<P, "haptic" | "hapticsEnabled"> {
   const {
     onPointerDown,
     onClick,
     disabled,
     "aria-disabled": ariaDisabled,
     haptic,
+    hapticsEnabled,
     ...rest
   } = props;
   const kind = haptic ?? defaultKind;
+  const enabled = shouldFireHaptic() && hapticsEnabled !== false;
 
-  if (kind === "none" || isDisabled(disabled, ariaDisabled) || !shouldFireHaptic()) {
+  if (kind === "none" || isDisabled(disabled, ariaDisabled) || !enabled) {
     return {
       ...rest,
       disabled,
       "aria-disabled": ariaDisabled,
       onPointerDown,
       onClick,
-    } as Omit<P, "haptic">;
+    } as Omit<P, "haptic" | "hapticsEnabled">;
   }
 
   const fire =
@@ -180,7 +202,7 @@ export function withHapticPress<P extends PressableProps>(
       if (isPrimaryClickEvent(event)) tryFire();
       onClick?.(event);
     },
-  } as Omit<P, "haptic">;
+  } as Omit<P, "haptic" | "hapticsEnabled">;
 }
 
 /** Tracks pointer/keyboard so selection haptics fire only for user toggles, not programmatic state. */

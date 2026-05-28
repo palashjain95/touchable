@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { withHapticPress, type HapticPressKind } from "../lib/haptics";
+import { useHapticsEnabled, withHapticPress, type HapticPressKind } from "../lib/haptics";
 
 const BTN_PRIMARY = "var(--primary)";
 
@@ -343,7 +343,8 @@ export type ButtonProps = Omit<
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ type = "button", fullWidth = true, size = "default", shellStyle, children, ...props }, ref) => {
-    const buttonProps = withHapticPress(props, "light");
+    const hapticsEnabled = useHapticsEnabled();
+    const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
     return (
       <button
         ref={ref}
@@ -372,7 +373,8 @@ export const ButtonOutline = React.forwardRef<
   HTMLButtonElement,
   ButtonOutlineProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -425,7 +427,8 @@ export const ButtonDestructive = React.forwardRef<
     ref,
   ) => {
     const stacked = layout === "stacked";
-    const buttonProps = withHapticPress(props, "medium");
+    const hapticsEnabled = useHapticsEnabled();
+    const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "medium");
     return (
       <button
         ref={ref}
@@ -475,7 +478,8 @@ export const ButtonAffirmative = React.forwardRef<
   HTMLButtonElement,
   ButtonAffirmativeProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -504,7 +508,8 @@ export const ButtonNeutral = React.forwardRef<
   ButtonNeutralProps
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
   const contentClass = size === "compact" ? CONTENT_CLASS_COMPACT : CONTENT_CLASS;
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -530,7 +535,8 @@ export type ButtonNeutralPillProps = Omit<ButtonProps, "size" | "shellStyle">;
 /** Pill-shaped neutral control for filters and toolbar dropdowns (rounded-full, 48px). */
 export const ButtonNeutralPill = React.forwardRef<HTMLButtonElement, ButtonNeutralPillProps>(
   ({ type = "button", fullWidth = false, children, ...props }, ref) => {
-    const buttonProps = withHapticPress(props, "light");
+    const hapticsEnabled = useHapticsEnabled();
+    const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
     return (
     <button
       ref={ref}
@@ -558,7 +564,8 @@ export const ButtonTertiary = React.forwardRef<
 >(({ type = "button", fullWidth = true, size = "default", children, ...props }, ref) => {
   const contentClass =
     size === "compact" ? CONTENT_CLASS_TERTIARY_COMPACT : CONTENT_CLASS;
-  const buttonProps = withHapticPress(props, "none");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "none");
   return (
     <button
       ref={ref}
@@ -593,7 +600,8 @@ export const ButtonInverse = React.forwardRef<
 >(({ type = "button", fullWidth = true, size = "compact", children, ...props }, ref) => {
   const contentClass =
     size === "cta" ? CONTENT_CLASS_INVERSE_SM : size === "compact" ? CONTENT_CLASS_COMPACT : CONTENT_CLASS;
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -644,7 +652,8 @@ export const ButtonIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -680,7 +689,8 @@ export const ButtonInverseIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonInverseIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -716,7 +726,8 @@ export const ButtonOutlineIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonOutlineIconProps
 >(({ type = "button", size = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <button
       ref={ref}
@@ -767,7 +778,8 @@ export const ButtonNeutralIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonNeutralIconProps
 >(({ type = "button", size = "default", tone = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, tone === "destructive" ? "medium" : "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, tone === "destructive" ? "medium" : "light");
   return (
     <button
       ref={ref}
@@ -823,7 +835,8 @@ export const ButtonNeutralIconLink = React.forwardRef<
   HTMLAnchorElement,
   ButtonNeutralIconLinkProps
 >(({ size = "default", children, ...props }, ref) => {
-  const linkProps = withHapticPress(props, "light");
+  const hapticsEnabled = useHapticsEnabled();
+  const linkProps = withHapticPress({ ...props, hapticsEnabled }, "light");
   return (
     <a
       ref={ref}
@@ -858,7 +871,8 @@ export type ButtonLinkProps = Omit<
 /** Text link for navigation and secondary exits (uses --fg-link). */
 export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   ({ children, ...props }, ref) => {
-    const linkProps = withHapticPress(props, "light");
+    const hapticsEnabled = useHapticsEnabled();
+    const linkProps = withHapticPress({ ...props, hapticsEnabled }, "light");
     return (
     <a ref={ref} data-button="" className={LINK_BUTTON_CLASS} style={LINK_BUTTON_STYLE} {...linkProps}>
       <span data-button-content="true" className="relative z-30">
@@ -931,7 +945,8 @@ export const ButtonTertiaryIcon = React.forwardRef<
   HTMLButtonElement,
   ButtonTertiaryIconProps
 >(({ type = "button", size = "default", tone = "default", children, ...props }, ref) => {
-  const buttonProps = withHapticPress(props, "none");
+  const hapticsEnabled = useHapticsEnabled();
+  const buttonProps = withHapticPress({ ...props, hapticsEnabled }, "none");
   return (
     <button
       ref={ref}

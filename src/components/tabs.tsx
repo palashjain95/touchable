@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
-import { hapticTabChange } from "../lib/haptics";
+import { hapticTabChange, useHapticsEnabled } from "../lib/haptics";
 import { cn } from "../lib/utils";
 import { TabsActiveValueContext, TabsList, TabsTrigger } from "./tabs-list";
 
@@ -9,6 +9,7 @@ const Tabs = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root>
 >(({ value, defaultValue, onValueChange, ...props }, ref) => {
+  const hapticsEnabled = useHapticsEnabled();
   const isControlled = value !== undefined;
   const [uncontrolledValue, setUncontrolledValue] = React.useState(defaultValue ?? "");
   const [optimisticValue, setOptimisticValue] = React.useState<string | null>(null);
@@ -31,7 +32,7 @@ const Tabs = React.forwardRef<
         onValueChange={(next) => {
           setOptimisticValue(next);
           if (!isControlled) setUncontrolledValue(next);
-          hapticTabChange();
+          if (hapticsEnabled) hapticTabChange();
           onValueChange?.(next);
         }}
         {...props}

@@ -28,6 +28,16 @@ import { HapticsProvider } from "@palashjain95/touchable";
 </HapticsProvider>
 ```
 
+Or disable haptics for just a subtree (e.g. onboarding, a practice overlay, a sheet):
+
+```tsx
+import { HapticsScope } from "@palashjain95/touchable";
+
+<HapticsScope enabled={false}>
+  <SilentSection />
+</HapticsScope>
+```
+
 Per-control override: `haptic="none"` on a pressable component.
 
 ## Feedback types

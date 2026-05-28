@@ -20,6 +20,9 @@ export type {
 export { HapticsProvider } from "./components/haptics-provider";
 export type { HapticsProviderProps } from "./components/haptics-provider";
 
+export { HapticsScope } from "./components/haptics-scope";
+export type { HapticsScopeProps } from "./components/haptics-scope";
+
 export {
   Button,
   ButtonOutline,

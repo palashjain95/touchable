@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { ReactNode } from 'react';
 
-import { withHapticPress, type HapticPressKind } from '../lib/haptics';
+import { useHapticsEnabled, withHapticPress, type HapticPressKind } from '../lib/haptics';
 import { cn } from '../lib/utils';
 
 const PILL_NEUTRAL_TOKEN_STYLE = {
@@ -190,7 +190,8 @@ export function PillNeutral({
   className,
   ...props
 }: PillProps) {
-  const shellProps = interactive ? withHapticPress({ ...props, haptic }, "selection") : props;
+  const hapticsEnabled = useHapticsEnabled();
+  const shellProps = interactive ? withHapticPress({ ...props, haptic, hapticsEnabled }, "selection") : props;
 
   return (
     <span
@@ -213,7 +214,8 @@ export function PillAccent({
   style,
   ...props
 }: PillProps) {
-  const shellProps = interactive ? withHapticPress({ ...props, haptic }, "selection") : props;
+  const hapticsEnabled = useHapticsEnabled();
+  const shellProps = interactive ? withHapticPress({ ...props, haptic, hapticsEnabled }, "selection") : props;
 
   return (
     <span
