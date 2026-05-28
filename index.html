@@ -7,6 +7,14 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var root = document.documentElement;
+        root.classList.toggle("dark", dark);
+        root.style.colorScheme = dark ? "dark" : "light";
+      })();
+    </script>
 
     <title>Touchable | UI Library</title>
     <meta
@@ -62,7 +70,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/touchable/assets/index-BS_VONxo.js"></script>
+    <script type="module" crossorigin src="/touchable/assets/index-DNi4YmkK.js"></script>
     <link rel="stylesheet" crossorigin href="/touchable/assets/index-BQSP6IsM.css">
   </head>
   <body>
