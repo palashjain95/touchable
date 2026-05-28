@@ -148,6 +148,94 @@ export function ComponentsPage() {
       </ComponentSection>
 
       <ComponentSection
+        title="Dropdown"
+        description="Select control. Pill trigger for filters; field trigger for forms."
+        agentPrompt={componentSnippets.dropdown.agentPrompt}
+      >
+        <Preview className="flex flex-wrap items-end gap-6">
+          <div>
+            <SizeLabel>variant pill</SizeLabel>
+            <Dropdown defaultValue="mine">
+              <DropdownTrigger variant="pill" aria-label="Project filter">
+                <DropdownValue placeholder="Filter projects" />
+              </DropdownTrigger>
+              <DropdownContent>
+                <DropdownItem value="all">All projects</DropdownItem>
+                <DropdownItem value="mine">Created by me</DropdownItem>
+                <DropdownItem value="shared">Shared with me</DropdownItem>
+              </DropdownContent>
+            </Dropdown>
+          </div>
+          <div className="w-full max-w-xs">
+            <SizeLabel>variant field</SizeLabel>
+            <Dropdown defaultValue="welcome">
+              <DropdownTrigger variant="field" aria-label="Event type">
+                <DropdownValue placeholder="Select event type..." />
+              </DropdownTrigger>
+              <DropdownContent>
+                <DropdownItem value="welcome">Welcome</DropdownItem>
+                <DropdownItem value="recital">Recital</DropdownItem>
+                <DropdownItem value="rehearsal">Rehearsal</DropdownItem>
+              </DropdownContent>
+            </Dropdown>
+          </div>
+        </Preview>
+      </ComponentSection>
+
+      <ComponentSection
+        title="Combobox"
+        description="Fixed-option select (same as Dropdown). Trigger exposes combobox role; use field variant in forms."
+        agentPrompt={componentSnippets.combobox.agentPrompt}
+      >
+        <Preview className="flex flex-wrap items-end gap-6">
+          <div className="w-full max-w-xs">
+            <SizeLabel>variant field</SizeLabel>
+            <Combobox defaultValue="welcome">
+              <ComboboxTrigger variant="field" aria-label="Event type">
+                <ComboboxValue placeholder="Select event type..." />
+              </ComboboxTrigger>
+              <ComboboxContent>
+                <ComboboxItem value="welcome">Welcome</ComboboxItem>
+                <ComboboxItem value="recital">Recital</ComboboxItem>
+                <ComboboxItem value="rehearsal">Rehearsal</ComboboxItem>
+              </ComboboxContent>
+            </Combobox>
+          </div>
+        </Preview>
+      </ComponentSection>
+
+      <ComponentSection
+        title="Tabs"
+        description="Segmented control with sliding indicator."
+        agentPrompt={componentSnippets.tabs.agentPrompt}
+      >
+        <Preview>
+          <Tabs defaultValue="overview">
+            <TabsList>
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="details">Details</TabsTrigger>
+              <TabsTrigger value="notes">Notes</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview">
+              <Card size="rectangle" className="mt-4 p-4">
+                Overview panel
+              </Card>
+            </TabsContent>
+            <TabsContent value="details">
+              <Card size="rectangle" className="mt-4 p-4">
+                Details panel
+              </Card>
+            </TabsContent>
+            <TabsContent value="notes">
+              <Card size="rectangle" className="mt-4 p-4">
+                Notes panel
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </Preview>
+      </ComponentSection>
+
+      <ComponentSection
         title="Card"
         description="Border radius follows size: rectangle panels use rounded-3xl; compact rows and portrait tiles use rounded-xl."
         agentPrompt={componentSnippets.card.agentPrompt}
@@ -314,37 +402,6 @@ export function ComponentsPage() {
       </ComponentSection>
 
       <ComponentSection
-        title="Tabs"
-        description="Segmented control with sliding indicator."
-        agentPrompt={componentSnippets.tabs.agentPrompt}
-      >
-        <Preview>
-          <Tabs defaultValue="overview">
-            <TabsList>
-              <TabsTrigger value="overview">Overview</TabsTrigger>
-              <TabsTrigger value="details">Details</TabsTrigger>
-              <TabsTrigger value="notes">Notes</TabsTrigger>
-            </TabsList>
-            <TabsContent value="overview">
-              <Card size="rectangle" className="mt-4 p-4">
-                Overview panel
-              </Card>
-            </TabsContent>
-            <TabsContent value="details">
-              <Card size="rectangle" className="mt-4 p-4">
-                Details panel
-              </Card>
-            </TabsContent>
-            <TabsContent value="notes">
-              <Card size="rectangle" className="mt-4 p-4">
-                Notes panel
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </Preview>
-      </ComponentSection>
-
-      <ComponentSection
         title="SearchField"
         description="Search input with icon. Pill for toolbars; field for full-width rows."
         agentPrompt={componentSnippets.searchField.agentPrompt}
@@ -388,63 +445,6 @@ export function ComponentsPage() {
               name="title"
               placeholder="Spring recital"
             />
-          </div>
-        </Preview>
-      </ComponentSection>
-
-      <ComponentSection
-        title="Dropdown"
-        description="Select control. Pill trigger for filters; field trigger for forms."
-        agentPrompt={componentSnippets.dropdown.agentPrompt}
-      >
-        <Preview className="flex flex-wrap items-end gap-6">
-          <div>
-            <SizeLabel>variant pill</SizeLabel>
-            <Dropdown defaultValue="mine">
-              <DropdownTrigger variant="pill" aria-label="Project filter">
-                <DropdownValue placeholder="Filter projects" />
-              </DropdownTrigger>
-              <DropdownContent>
-                <DropdownItem value="all">All projects</DropdownItem>
-                <DropdownItem value="mine">Created by me</DropdownItem>
-                <DropdownItem value="shared">Shared with me</DropdownItem>
-              </DropdownContent>
-            </Dropdown>
-          </div>
-          <div className="w-full max-w-xs">
-            <SizeLabel>variant field</SizeLabel>
-            <Dropdown defaultValue="welcome">
-              <DropdownTrigger variant="field" aria-label="Event type">
-                <DropdownValue placeholder="Select event type..." />
-              </DropdownTrigger>
-              <DropdownContent>
-                <DropdownItem value="welcome">Welcome</DropdownItem>
-                <DropdownItem value="recital">Recital</DropdownItem>
-                <DropdownItem value="rehearsal">Rehearsal</DropdownItem>
-              </DropdownContent>
-            </Dropdown>
-          </div>
-        </Preview>
-      </ComponentSection>
-
-      <ComponentSection
-        title="Combobox"
-        description="Fixed-option select (same as Dropdown). Trigger exposes combobox role; use field variant in forms."
-        agentPrompt={componentSnippets.combobox.agentPrompt}
-      >
-        <Preview className="flex flex-wrap items-end gap-6">
-          <div className="w-full max-w-xs">
-            <SizeLabel>variant field</SizeLabel>
-            <Combobox defaultValue="welcome">
-              <ComboboxTrigger variant="field" aria-label="Event type">
-                <ComboboxValue placeholder="Select event type..." />
-              </ComboboxTrigger>
-              <ComboboxContent>
-                <ComboboxItem value="welcome">Welcome</ComboboxItem>
-                <ComboboxItem value="recital">Recital</ComboboxItem>
-                <ComboboxItem value="rehearsal">Rehearsal</ComboboxItem>
-              </ComboboxContent>
-            </Combobox>
           </div>
         </Preview>
       </ComponentSection>
